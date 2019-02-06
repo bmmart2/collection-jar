@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_03_191054) do
+ActiveRecord::Schema.define(version: 2019_02_06_040603) do
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.integer "userID"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,6 +29,16 @@ ActiveRecord::Schema.define(version: 2019_02_03_191054) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "video_games", force: :cascade do |t|
+    t.string "publisher"
+    t.string "platform"
+    t.integer "year"
+    t.integer "condition"
+    t.integer "upc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
