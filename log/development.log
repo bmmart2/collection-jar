@@ -784,3 +784,284 @@ Migrating to CreateVideoGames (20190206040603)
   ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
   [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/" for 127.0.0.1 at 2019-02-06 16:46:58 -0600
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 4076ms (Views: 4054.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/signin" for 127.0.0.1 at 2019-02-06 16:47:10 -0600
+Processing by LoginController#signin as HTML
+  Rendering login/signin.html.erb within layouts/application
+  Rendered login/signin.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 176ms (Views: 166.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/signin" for 127.0.0.1 at 2019-02-06 16:47:10 -0600
+Processing by LoginController#signin as HTML
+  Rendering login/signin.html.erb within layouts/application
+  Rendered login/signin.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 124ms (Views: 118.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 16:47:13 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 128ms (Views: 123.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/signin" for 127.0.0.1 at 2019-02-06 16:47:22 -0600
+Started GET "/" for 127.0.0.1 at 2019-02-06 16:47:22 -0600
+Processing by LoginController#signin as HTML
+Processing by PagesController#index as HTML
+  Rendering login/signin.html.erb within layouts/application
+  Rendered login/signin.html.erb within layouts/application (0.5ms)
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 180ms (Views: 169.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 167ms (Views: 154.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/signin" for 127.0.0.1 at 2019-02-06 16:47:22 -0600
+Processing by LoginController#signin as HTML
+  Rendering login/signin.html.erb within layouts/application
+  Rendered login/signin.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 134ms (Views: 128.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/signin" for 127.0.0.1 at 2019-02-06 16:47:23 -0600
+Processing by LoginController#signin as HTML
+  Rendering login/signin.html.erb within layouts/application
+  Rendered login/signin.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 134ms (Views: 127.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 16:47:26 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 119ms (Views: 114.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 16:47:33 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 130ms (Views: 123.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 16:47:39 -0600
+Started GET "/login/signin" for 127.0.0.1 at 2019-02-06 16:47:39 -0600
+Processing by PagesController#index as HTML
+Processing by LoginController#signin as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendering login/signin.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+  Rendered login/signin.html.erb within layouts/application (0.2ms)
+Completed 200 OK in 177ms (Views: 161.0ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 176ms (Views: 162.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/signin" for 127.0.0.1 at 2019-02-06 16:47:39 -0600
+Processing by LoginController#signin as HTML
+  Rendering login/signin.html.erb within layouts/application
+  Rendered login/signin.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 140ms (Views: 135.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/signin" for 127.0.0.1 at 2019-02-06 16:47:40 -0600
+Processing by LoginController#signin as HTML
+  Rendering login/signin.html.erb within layouts/application
+  Rendered login/signin.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 139ms (Views: 132.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 16:47:41 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 115ms (Views: 110.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 16:47:57 -0600
+Started GET "/login/signin" for 127.0.0.1 at 2019-02-06 16:47:57 -0600
+Processing by PagesController#index as HTML
+Processing by LoginController#signin as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+  Rendering login/signin.html.erb within layouts/application
+  Rendered login/signin.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 173ms (Views: 161.5ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 147ms (Views: 143.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/signin" for 127.0.0.1 at 2019-02-06 16:47:57 -0600
+Processing by LoginController#signin as HTML
+  Rendering login/signin.html.erb within layouts/application
+  Rendered login/signin.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 146ms (Views: 128.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login/signin" for 127.0.0.1 at 2019-02-06 16:47:57 -0600
+Processing by LoginController#signin as HTML
+  Rendering login/signin.html.erb within layouts/application
+  Rendered login/signin.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 138ms (Views: 132.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 16:47:58 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 130ms (Views: 125.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 16:48:25 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 104ms (Views: 99.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:02:26 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 107ms (Views: 103.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:02:36 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 110ms (Views: 100.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:05:33 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 124ms (Views: 120.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:05:42 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 137ms (Views: 127.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:06:00 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 125ms (Views: 120.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:06:18 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 123ms (Views: 117.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:06:37 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 111ms (Views: 102.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:06:38 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 129ms (Views: 122.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:07:32 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 118ms (Views: 114.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:07:42 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 132ms (Views: 118.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:07:45 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 135ms (Views: 127.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:08:57 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 116ms (Views: 112.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:09:11 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 140ms (Views: 131.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:09:12 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 113ms (Views: 105.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-06 17:09:24 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 170ms (Views: 145.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddUserForeignKeyToItems (20190211224015)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::SchemaMigration Create (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190211224015"]]
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (36.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273

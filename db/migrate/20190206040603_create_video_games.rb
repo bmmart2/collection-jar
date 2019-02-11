@@ -5,7 +5,7 @@ class CreateVideoGames < ActiveRecord::Migration[5.2]
       t.string :platform
       t.integer :year
       t.integer :condition
-      t.integer :upc
+      t.string :upc
 
       t.timestamps
     end
