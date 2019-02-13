@@ -24,7 +24,7 @@ class VideogamesController < ApplicationController
   # POST /videogames
   # POST /videogames.json
   def create
-    @videogame = Videogame.new(videogame_params)
+    @videogame = curent_user.Videogame.new(videogame_params)
 
     respond_to do |format|
       if @videogame.save
