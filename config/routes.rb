@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :videogames
   get 'login/signin'
   root 'pages#index'
   devise_for :users

@@ -1,0 +1,38 @@
+<%= form_with(model: videogame, local: true) do |form| %>
+  <% if videogame.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(videogame.errors.count, "error") %> prohibited this videogame from being saved:</h2>
+
+      <ul>
+      <% videogame.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>Title</p>
+  <p><input name="title" type="text" value="Title"</p>
+
+  <p>Publisher</p>
+  <p><input name="publisher" type="text" value="Publisher" /></p>
+  <p>Platform</p>
+  <p><input name="platform" type="text" value="Platform" /></p>
+  <p>Year</p>
+  <p><input name="year" type="text" value="Year" /></p>
+  <p>Condition</p>
+  <select>
+  <option value="6">M</option>
+  <option value="5">NM</option>
+  <option value="4">VG</option>
+  <option value="3">G</option>
+  <option value="2">F</option>
+  <option value="1">P</option>
+  </select>
+  <p>UPC Code</p>
+  <p><input name="upc" type="text" value="UPC" /></p>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
