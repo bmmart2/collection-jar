@@ -37,9 +37,8 @@
               Hello, User!
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <%= link_to('Register', new_user_registration_path)  %>
               <a class="dropdown-item" href="/login/signin">Login</a>
-              <a class="dropdown-item" href="/registrations/new">Sign up</a>
+              <a class="dropdown-item" <%= link_to('Sign up', new_user_registration_path)  %></a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Forgot Password?</a>
             </div>
