@@ -24,7 +24,7 @@ class VideogamesController < ApplicationController
   # POST /videogames
   # POST /videogames.json
   def create
-    @videogame = curent_user.Videogame.new(videogame_params)
+    @videogame = Videogame.new(videogame_params)
 
     respond_to do |format|
       if @videogame.save
@@ -69,6 +69,6 @@ class VideogamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def videogame_params
-      params.fetch(:videogame, {})
+      params.require(:videogame).permit(:title, :publisher, :platform, :year, :condition, :upc)
     end
 end

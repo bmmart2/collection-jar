@@ -1,4 +1,34 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Title:</strong>
+  <%= @videogame.title %>
+</p>
+
+<p>
+  <strong>Publisher:</strong>
+  <%= @videogame.publisher %>
+</p>
+
+<p>
+  <strong>Platform:</strong>
+  <%= @videogame.platform %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @videogame.year %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @videogame.condition %>
+</p>
+
+<p>
+  <strong>Upc:</strong>
+  <%= @videogame.upc %>
+</p>
+
 <%= link_to 'Edit', edit_videogame_path(@videogame) %> |
 <%= link_to 'Back', videogames_path %>

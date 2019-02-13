@@ -17,7 +17,7 @@ class VideogamesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create videogame" do
     assert_difference('Videogame.count') do
-      post videogames_url, params: { videogame: {  } }
+      post videogames_url, params: { videogame: { condition: @videogame.condition, platform: @videogame.platform, publisher: @videogame.publisher, title: @videogame.title, upc: @videogame.upc, year: @videogame.year } }
     end
 
     assert_redirected_to videogame_url(Videogame.last)
@@ -34,7 +34,7 @@ class VideogamesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update videogame" do
-    patch videogame_url(@videogame), params: { videogame: {  } }
+    patch videogame_url(@videogame), params: { videogame: { condition: @videogame.condition, platform: @videogame.platform, publisher: @videogame.publisher, title: @videogame.title, upc: @videogame.upc, year: @videogame.year } }
     assert_redirected_to videogame_url(@videogame)
   end
 

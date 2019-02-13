@@ -14,6 +14,12 @@ class VideogamesTest < ApplicationSystemTestCase
     visit videogames_url
     click_on "New Videogame"
 
+    fill_in "Condition", with: @videogame.condition
+    fill_in "Platform", with: @videogame.platform
+    fill_in "Publisher", with: @videogame.publisher
+    fill_in "Title", with: @videogame.title
+    fill_in "Upc", with: @videogame.upc
+    fill_in "Year", with: @videogame.year
     click_on "Create Videogame"
 
     assert_text "Videogame was successfully created"
@@ -24,6 +30,12 @@ class VideogamesTest < ApplicationSystemTestCase
     visit videogames_url
     click_on "Edit", match: :first
 
+    fill_in "Condition", with: @videogame.condition
+    fill_in "Platform", with: @videogame.platform
+    fill_in "Publisher", with: @videogame.publisher
+    fill_in "Title", with: @videogame.title
+    fill_in "Upc", with: @videogame.upc
+    fill_in "Year", with: @videogame.year
     click_on "Update Videogame"
 
     assert_text "Videogame was successfully updated"

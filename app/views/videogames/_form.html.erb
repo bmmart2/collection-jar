@@ -11,26 +11,35 @@
     </div>
   <% end %>
 
-  <p>Title</p>
-  <p><input name="title" type="text" value="Title"</p>
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
 
-  <p>Publisher</p>
-  <p><input name="publisher" type="text" value="Publisher" /></p>
-  <p>Platform</p>
-  <p><input name="platform" type="text" value="Platform" /></p>
-  <p>Year</p>
-  <p><input name="year" type="text" value="Year" /></p>
-  <p>Condition</p>
-  <select>
-  <option value="6">M</option>
-  <option value="5">NM</option>
-  <option value="4">VG</option>
-  <option value="3">G</option>
-  <option value="2">F</option>
-  <option value="1">P</option>
-  </select>
-  <p>UPC Code</p>
-  <p><input name="upc" type="text" value="UPC" /></p>
+  <div class="field">
+    <%= form.label :publisher %>
+    <%= form.text_field :publisher %>
+  </div>
+
+  <div class="field">
+    <%= form.label :platform %>
+    <%= form.text_field :platform %>
+  </div>
+
+  <div class="field">
+    <%= form.label :year %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div class="field">
+    <%= form.label :condition %>
+    <%= form.number_field :condition %>
+  </div>
+
+  <div class="field">
+    <%= form.label :upc %>
+    <%= form.text_field :upc %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

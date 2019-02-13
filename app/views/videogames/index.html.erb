@@ -5,6 +5,12 @@
 <table>
   <thead>
     <tr>
+      <th>Title</th>
+      <th>Publisher</th>
+      <th>Platform</th>
+      <th>Year</th>
+      <th>Condition</th>
+      <th>Upc</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,6 +18,12 @@
   <tbody>
     <% @videogames.each do |videogame| %>
       <tr>
+        <td><%= videogame.title %></td>
+        <td><%= videogame.publisher %></td>
+        <td><%= videogame.platform %></td>
+        <td><%= videogame.year %></td>
+        <td><%= videogame.condition %></td>
+        <td><%= videogame.upc %></td>
         <td><%= link_to 'Show', videogame %></td>
         <td><%= link_to 'Edit', edit_videogame_path(videogame) %></td>
         <td><%= link_to 'Destroy', videogame, method: :delete, data: { confirm: 'Are you sure?' } %></td>

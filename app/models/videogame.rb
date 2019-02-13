@@ -1,4 +1,2 @@
-class Videogame < Item
-
-    belongs_to :User
+class Videogame < ApplicationRecord
 end
