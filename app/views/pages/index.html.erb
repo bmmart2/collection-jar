@@ -37,20 +37,21 @@
               Hello, User!
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item"
               <% if user_signed_in? %>
-                  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+                  <a class="dropdown-item" <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+
               <% else %>
-                  <%= link_to('Login', new_user_session_path)  %>
+                  <a class="dropdown-item" <%= link_to('Login', new_user_session_path)  %></a>
+                  <a class="dropdown-item" <%= link_to('Sign up', new_user_registration_path)  %></a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" <%= link_to('Forgot password?', new_user_password_path) %></a>
               <% end %>
-              </a>
-              <a class="dropdown-item" <%= link_to('Sign up', new_user_registration_path)  %></a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" <%= link_to('Forgot password?', new_user_password_path) %></a>
+
+
             </div>
           </li>
         </ul>
-    </div>
+
   </nav>
 <!-- Body -->
 <body>
