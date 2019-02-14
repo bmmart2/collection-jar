@@ -30,7 +30,7 @@
     <link href="https://getbootstrap.com/docs/4.2/examples/sign-in/signin.css" rel="stylesheet">
   </head>
   <body class="text-center">
-    <form class="form-signin">
+    <div class= "container container--xs">
       <img class="mb-4" src="https://i.imgur.com/RJ5XUmI.png" alt="" width="120" height="140">
       <h1 class="h3 mb-3 font-weight-normal"><strong>Forgot your password?</strong></h1>
       <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
@@ -46,6 +46,6 @@
         <br>
         <%= render "devise/shared/links" %>
       <% end %>
-</form>
+    </div>
 </body>
 </html>
