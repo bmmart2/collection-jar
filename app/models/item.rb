@@ -1,4 +1,6 @@
 class Item < ApplicationRecord
 
-  belongs_to :User
+  attr_accessor :name
+
+  belongs_to :user
 end

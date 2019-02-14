@@ -4,7 +4,12 @@ class VideogamesController < ApplicationController
   # GET /videogames
   # GET /videogames.json
   def index
-    @videogames = Videogame.all
+
+    if user_signed_in?
+        @videogames = current_user.videogames.all
+    else
+        redirect_to :root
+    end
   end
 
   # GET /videogames/1
@@ -14,7 +19,7 @@ class VideogamesController < ApplicationController
 
   # GET /videogames/new
   def new
-    @videogame = Videogame.new
+    @videogame = current_user.videogames.new
   end
 
   # GET /videogames/1/edit
@@ -24,8 +29,8 @@ class VideogamesController < ApplicationController
   # POST /videogames
   # POST /videogames.json
   def create
-    @videogame = Videogame.new(videogame_params)
-
+      @videogame = current_user.videogames.create(videogame_params)
+      @videogame.save
     respond_to do |format|
       if @videogame.save
         format.html { redirect_to @videogame, notice: 'Videogame was successfully created.' }

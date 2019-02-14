@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_14_175651) do
+ActiveRecord::Schema.define(version: 2019_02_14_202620) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
-    t.integer "userID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -42,6 +41,8 @@ ActiveRecord::Schema.define(version: 2019_02_14_175651) do
     t.string "upc"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_videogames_on_user_id"
   end
 
 end
