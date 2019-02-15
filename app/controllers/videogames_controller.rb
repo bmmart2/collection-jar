@@ -30,7 +30,6 @@ class VideogamesController < ApplicationController
   # POST /videogames.json
   def create
       @videogame = current_user.videogames.create(videogame_params)
-      @videogame.save
     respond_to do |format|
       if @videogame.save
         format.html { redirect_to @videogame, notice: 'Videogame was successfully created.' }

@@ -9,5 +9,6 @@ class CreateVideogames < ActiveRecord::Migration[5.2]
       t.string :upc
       t.timestamps
     end
+    add_index :videogames, :user
   end
 end
