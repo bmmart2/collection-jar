@@ -1,37 +1,66 @@
-<p id="notice"><%= notice %></p>
+<!--<p id="notice"><%= notice %></p>-->
 
-<h1>Videogames</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">
+    <%= image_tag ("logo.png"), :size=> "55x65"%>
+  </a>
+  <a class="navbar-brand" href="/">Video Games</a>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Publisher</th>
-      <th>Platform</th>
-      <th>Year</th>
-      <th>Condition</th>
-      <th>Upc</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <!-- Spacing -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+  </div>
 
-  <tbody>
-    <% @videogames.each do |videogame| %>
-      <tr>
-        <td><%= videogame.title %></td>
-        <td><%= videogame.publisher %></td>
-        <td><%= videogame.platform %></td>
-        <td><%= videogame.year %></td>
-        <td><%= videogame.condition %></td>
-        <td><%= videogame.upc %></td>
-        <td><%= link_to 'Show', videogame %></td>
-        <td><%= link_to 'Edit', edit_videogame_path(videogame) %></td>
-        <td><%= link_to 'Destroy', videogame, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+    </ul>
+  </div>
 
-<br>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item dropdown py-0 px-md-5">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Hello, User!
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item" <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        </div>
+      </li>
+    </ul>
 
-<%= link_to 'New Videogame', new_videogame_path %>
+  </nav>
+
+  <section class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col"><u>Title</u></div>
+        <div class="col"><u>Publisher</u></div>
+        <div class="col"><u>Platform</u></div>
+        <div class="col"><u>Year</u></div>
+        <div class="col"><u>Condition</u></div>
+        <div class="col"><u>Upc</u></div>
+        <div class="col"><u>Show</u></div>
+        <div class="col"><u>Edit</u></div>
+        <div class="col"><u>Destroy</u></div>
+      </div>
+      <% @videogames.each do |videogame| %>
+      <div class="row">
+        <div class="col"><%= videogame.title %></div>
+        <div class="col"><%= videogame.publisher %></div>
+        <div class="col"><%= videogame.platform %></div>
+        <div class="col"><%= videogame.year %></div>
+        <div class="col"><%= videogame.condition %></div>
+        <div class="col"><%= videogame.upc %></div>
+        <div class="col"><a class="btn btn-primary btn-sm"<%= link_to 'Show', videogame %></a></div>
+        <div class="col"><a class="btn btn-primary btn-sm"<%= link_to 'Edit', edit_videogame_path(videogame) %></a></div>
+        <div class="col"><a class="btn btn-secondary btn-sm"<%= link_to 'Destroy', videogame, method: :delete, data: { confirm: 'Are you sure?' } %></a></div>
+      </div>
+      <% end %>
+    </div>
+  </section>
+  <br>
+
+  <a class="btn btn-primary my-2"<%= link_to 'New Videogame', new_videogame_path %></a>
