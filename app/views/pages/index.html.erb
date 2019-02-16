@@ -64,8 +64,12 @@
               <h1 class="jumbotron-heading">Track Your Collection</h1>
               <p class="lead text-muted">Collection Jar is a where you can <strong> create, update, and manage </strong> your personal collections—video games, movies, music, and more. Make your own collection and begin tracking your collectibles now!</p>
               <p>
-                <a href="#" class="btn btn-primary my-2">Start your Collection</a>
-                <a href="#" class="btn btn-secondary my-2">Add to Database</a>
+                <% if user_signed_in? %>
+                <a class="btn btn-primary my-2"<%= link_to('View Collection', videogames_path) %></a>
+                <a class="btn btn-secondary my-2" <%= link_to('Add to Collection', new_videogame_path) %></a>
+                <% else %>
+                <a class="btn btn-primary my-2"<%= link_to('Start Collection', new_user_registration_path) %></a>
+                <% end %>
               </p>
             </div>
           </section>
@@ -84,7 +88,7 @@
       <div class="col-6 col-md">
         <h5>Collection Jar</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Video Games</a></li>
+          <li><a class="text-muted" <%= link_to('Video Games', videogames_path) %></a></li>
           <li><a class="text-muted" href="#">Movies</a></li>
           <li><a class="text-muted" href="#">Music</a></li>
           <li><a class="text-muted" href="#">Vinyls</a></li>
