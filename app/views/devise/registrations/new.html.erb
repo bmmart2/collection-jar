@@ -37,17 +37,17 @@
         <%= devise_error_messages! %>
 
         <div class="field">
-          <%= f.email_field :email, class:"form-control", placeholder: "Email address", autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, class:"form-control form-signin", placeholder: "Email address", autofocus: true, autocomplete: "email" %>
         </div>
 
         <br>
 
         <div class="field">
-          <%=f.text_field :fname, class:"form-control", placeholder: "First name", autofocus: false, autocomplete: "John" %>
+          <%=f.text_field :fname, class:"form-control form-signin", placeholder: "First name", autofocus: false, autocomplete: "John" %>
         </div>
 
         <div class="field">
-          <%=f.text_field :lname, class:"form-control", placeholder: "Last name", autofocus: false, autocomplete:"Doe" %>
+          <%=f.text_field :lname, class:"form-control form-signin", placeholder: "Last name", autofocus: false, autocomplete:"Doe" %>
         </div>
         <br>
         <div class="field">
@@ -55,17 +55,17 @@
           <% if @minimum_password_length %>
           <em>(<%= @minimum_password_length %> characters minimum)</em>
           <% end %><br />
-          <%= f.password_field :password, class:"form-control", placeholder:"Password", autocomplete: "new-password" %>
+          <%= f.password_field :password, class:"form-control form-signin", placeholder:"Password", autocomplete: "new-password" %>
         </div>
 
         <div class="field">
-          <%= f.password_field :password_confirmation, class:"form-control", placeholder:"Password confirmation", autocomplete: "new-password" %>
+          <%= f.password_field :password_confirmation, class:"form-control form-signin", placeholder:"Confirm Password", autocomplete: "new-password" %>
         </div>
 
         <br>
 
         <div class="actions">
-          <%= f.submit "Sign up", class:"btn btn-sm btn-primary btn-block"%>
+          <%= f.submit "Sign up", class:"btn btn-sm btn-primary btn-block form-signin"%>
         </div>
 
         <br>

@@ -37,11 +37,11 @@
         <%= devise_error_messages! %>
 
         <div class="field">
-          <%= f.email_field :email, class:"form-control", placeholder: "Email address", autofocus: true, autocomplete: "email" %>
+          <%= f.email_field :email, class:"form-control form-signin", placeholder: "Email address", autofocus: true, autocomplete: "email" %>
         </div>
         <br>
         <div class="actions">
-          <%= f.submit "Reset password", class:"btn btn-sm btn btn-danger btn-block" %>
+          <%= f.submit "Reset password", class:"btn btn-sm btn btn-danger btn-block form-signin" %>
         </div>
         <br>
         <%= render "devise/shared/links" %>
