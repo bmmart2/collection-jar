@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">
+      <img src="https://i.imgur.com/RJ5XUmI.png" width="55" height="65" alt="logo">
+    </a>
+    <a class="navbar-brand" href="#">Collection Jar</a>
+
+      <!-- Spacing -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      </div>
+
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="search..." aria-label="Search">
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+      </div>
+<!-- Maybe need in future?
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+-->
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown py-0 px-md-5">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Hello, User!
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <% if user_signed_in? %>
+                  <a class="dropdown-item" <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+
+              <% else %>
+                  <a class="dropdown-item" <%= link_to('Login', new_user_session_path)  %></a>
+                  <a class="dropdown-item" <%= link_to('Sign up', new_user_registration_path)  %></a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" <%= link_to('Forgot password?', new_user_password_path) %></a>
+              <% end %>
+
+
+            </div>
+          </li>
+        </ul>
+
+  </nav>
+<!-- Body -->
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-13">
+        <main role="main">
+          <section class="jumbotron text-center">
+            <div class="container">
+
+            </div>
+          </section>
+        </main>
+      </div>
+     </div>
+  </div>
+</body>
+<!-- Footer -->
+  <footer class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md">
+        <img src="https://i.imgur.com/RJ5XUmI.png" width="110" height="140" alt="logo"</img>
+        <small class="d-block mb-3 text-muted">&copy; 2019</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Collection Jar</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Video Games</a></li>
+          <li><a class="text-muted" href="#">Movies</a></li>
+          <li><a class="text-muted" href="#">Music</a></li>
+          <li><a class="text-muted" href="#">Vinyls</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="https://rubyonrails.org">Ruby on Rails</a></li>
+          <li><a class="text-muted" href="https://getbootstrap.com/">Bootstrap</a></li>
+          <li><a class="text-muted" href="https://www.imdb.com/">IMDb</a></li>
+          <li><a class="text-muted" href="#">Etc.</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About Us</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="https://github.com/bmmart2/collection-manager">GitHub</a></li>
+          <li><a class="text-muted" href="#">Team</a></li>
+          <li><a class="text-muted" href="#">Privacy</a></li>
+          <li><a class="text-muted" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</html>
