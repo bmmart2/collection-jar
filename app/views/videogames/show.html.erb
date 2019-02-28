@@ -1,34 +1,45 @@
-<p id="notice"><%= notice %></p>
+<html lang="en">
+  <head>
+    <link href="https://getbootstrap.com/docs/4.2/examples/sign-in/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <div class= "container container--xs">
+    <p id="notice"><strong><%= notice %></strong></p>
+    <!-- Placeholder image here for future images grabbed
+     from database for each specific image -->
+    <%= image_tag ("videogame.png"), :size=> "120x140"%>
+    <p>
+      <strong>Title:</strong>
+      <%= @videogame.title %>
+    </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @videogame.title %>
-</p>
+    <p>
+      <strong>Publisher:</strong>
+      <%= @videogame.publisher %>
+    </p>
 
-<p>
-  <strong>Publisher:</strong>
-  <%= @videogame.publisher %>
-</p>
+    <p>
+      <strong>Platform:</strong>
+      <%= @videogame.platform %>
+    </p>
 
-<p>
-  <strong>Platform:</strong>
-  <%= @videogame.platform %>
-</p>
+    <p>
+      <strong>Year:</strong>
+      <%= @videogame.year %>
+    </p>
 
-<p>
-  <strong>Year:</strong>
-  <%= @videogame.year %>
-</p>
+    <p>
+      <strong>Condition:</strong>
+      <%= @videogame.condition %>
+    </p>
 
-<p>
-  <strong>Condition:</strong>
-  <%= @videogame.condition %>
-</p>
+    <p>
+      <strong>Upc:</strong>
+      <%= @videogame.upc %>
+    </p>
 
-<p>
-  <strong>Upc:</strong>
-  <%= @videogame.upc %>
-</p>
-
-<%= link_to 'Edit', edit_videogame_path(@videogame) %> |
-<%= link_to 'Back', videogames_path %>
+    <%= link_to 'Edit', edit_videogame_path(@videogame), data: { confirm: 'Are you sure that you want to change this entry?' } %> |
+    <%= link_to 'Back', videogames_path %>
+  </div>
+</body>
+</html>
