@@ -1,47 +1,63 @@
-<%= form_with(model: videogame, local: true) do |form| %>
-  <% if videogame.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(videogame.errors.count, "error") %> prohibited this videogame from being saved:</h2>
+<!doctype html>
+<html lang="en">
+  <head>
+    <link href="https://getbootstrap.com/docs/4.2/examples/sign-in/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <div class= "container container--xs">
+      <%= form_with(model: videogame, local: true) do |form| %>
+        <% if videogame.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(videogame.errors.count, "error") %> prohibited this videogame from being saved:</h2>
 
-      <ul>
-      <% videogame.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+            <ul>
+            <% videogame.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= form.label :title%>
+          <%= form.text_field :title, class:"form-control form-signin" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :publisher %>
+          <%= form.text_field :publisher, class:"form-control form-signin" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :platform %>
+          <%= form.text_field :platform, class:"form-control form-signin" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :year %>
+          <%= form.number_field :year, class:"form-control form-signin" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :condition %>
+          <%= form.number_field :condition, class:"form-control form-signin" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :Upc %>
+          <%= form.text_field :upc, class:"form-control form-signin" %>
+        </div>
+
+        <br>
+
+        <div class="actions">
+          <%= form.submit "Create Video Game", class:"btn btn-sm btn-info btn-block form-signin"%>
+        </div>
+
+        <!-- Remember to add Javascript here to prompt the user to
+          click box if they want to go back rather then by accidently
+          clicking on it without saving -->
       <% end %>
-      </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :publisher %>
-    <%= form.text_field :publisher %>
-  </div>
-
-  <div class="field">
-    <%= form.label :platform %>
-    <%= form.text_field :platform %>
-  </div>
-
-  <div class="field">
-    <%= form.label :year %>
-    <%= form.number_field :year %>
-  </div>
-
-  <div class="field">
-    <%= form.label :condition %>
-    <%= form.number_field :condition %>
-  </div>
-
-  <div class="field">
-    <%= form.label :upc %>
-    <%= form.text_field :upc %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</body>
+</html>
