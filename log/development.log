@@ -4464,3 +4464,601 @@ Processing by VideogamesController#create as HTML
 Completed 200 OK in 153ms (Views: 133.8ms | ActiveRecord: 1.0ms)
 
 
+Started GET "/videogames" for 127.0.0.1 at 2019-02-28 23:49:57 -0600
+Processing by VideogamesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:8
+  Rendering videogames/index.html.erb within layouts/application
+  [1m[36mVideogame Load (0.3ms)[0m  [1m[34mSELECT "videogames".* FROM "videogames" WHERE "videogames"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/videogames/index.html.erb:49
+  Rendered videogames/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 111ms (Views: 101.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-28 23:49:59 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:37
+  Rendered pages/index.html.erb within layouts/application (11.9ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `firstname' for nil:NilClass):
+    35:           <li class="nav-item dropdown py-0 px-md-5">
+    36:             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    37:               <% if user_signed_in? %>
+    38:                     Hello <%= @current_user.firstname %>!
+    39:               <% else %>
+    40:                     Hello User!
+    41:               <% end %>
+  
+app/views/pages/index.html.erb:38:in `_app_views_pages_index_html_erb__2050164318783365036_70323681387780'
+Started GET "/" for 127.0.0.1 at 2019-02-28 23:50:19 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:37
+  Rendered pages/index.html.erb within layouts/application (11.1ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `fname' for nil:NilClass):
+    35:           <li class="nav-item dropdown py-0 px-md-5">
+    36:             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    37:               <% if user_signed_in? %>
+    38:                     Hello <%= @current_user.fname %>!
+    39:               <% else %>
+    40:                     Hello User!
+    41:               <% end %>
+  
+app/views/pages/index.html.erb:38:in `_app_views_pages_index_html_erb__2050164318783365036_70323682009760'
+Started GET "/" for 127.0.0.1 at 2019-02-28 23:52:41 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:37
+  Rendered pages/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 101ms (Views: 96.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-02-28 23:52:45 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ohpb5eWAXuRaThIGNq++4FqoWdB5n5OWqPPRo2ddR531dv7inBQag76wTaNPLJTRgTzUuVEsxMTwLsF1mrlW0w=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 27ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-28 23:52:45 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 116ms (Views: 111.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-02-28 23:54:00 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 141ms (Views: 130.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-02-28 23:54:01 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VOiatUR78SBZRzHWVm3zRwHZ+K2UQmpZqG68V2cgNxuqo9fOkXyy3027bqjbO8RKFK+lquxEf4UseiaoO6j+rA==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 127ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VOiatUR78SBZRzHWVm3zRwHZ+K2UQmpZqG68V2cgNxuqo9fOkXyy3027bqjbO8RKFK+lquxEf4UseiaoO6j+rA==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 237ms (Views: 122.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-02-28 23:54:07 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bfqniv7QkiZU6bSs3yxXBcaYo+yoIPPtlJg+bu7SIjp0RXBDWLhQ63u2WYdsnE02AXbh1a20S6OVFf+x0CdIzQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 138ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-28 23:54:07 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:37
+  Rendered pages/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 104ms (Views: 100.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-28 23:54:23 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:37
+  Rendered pages/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 97ms (Views: 92.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 00:04:27 -0600
+  
+SyntaxError (/mnt/c/Users/bmmar/Documents/GitHub/collection-manager/app/controllers/application_controller.rb:10: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/application_controller.rb:10: syntax error, unexpected end-of-input, expecting end
+app/controllers/pages_controller.rb:1:in `<main>'
+Started GET "/" for 127.0.0.1 at 2019-03-01 00:04:38 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:37
+  Rendered pages/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 128ms (Views: 119.1ms | ActiveRecord: 2.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-03-01 00:04:40 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"i7i6sixw7PMGuB8Fs6WHqsYvTFUXQZEZ8kF26FXLKYzXaVAr+2ivVxe0JAB1huAPSm8v1korr6sRUklpz5Vjcw=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 00:04:40 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 101ms (Views: 97.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-03-01 00:04:42 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 111ms (Views: 110.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-01 00:05:03 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uJ2w++CIvJcXGFvGTquSiM5Ja0M5qVOnrEODZzDSaxK6uykT2K0vWTG+Th4mdwjYoWrVCWJkTjJsH9sH01odcg==", "user"=>{"email"=>"test@test1.com", "fname"=>"Ben", "lname"=>"Smith", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameter: :lname
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@test1.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "fname") VALUES (?, ?, ?, ?, ?)[0m  [["email", "test@test1.com"], ["encrypted_password", "$2a$11$qjbOH/QlyqkKWSrpemmB..rx8bMwDAlBgUs4kVfZFQskR.PXuN.AS"], ["created_at", "2019-03-01 06:05:03.440967"], ["updated_at", "2019-03-01 06:05:03.440967"], ["fname", "Ben"]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 161ms (ActiveRecord: 15.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 00:05:03 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:37
+  Rendered pages/index.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 127ms (Views: 121.9ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-03-01 00:06:17 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yEAfh+mNr15QdkeFJavYTJjsdn25ql54RHxmvoeIG2vFA9IrE8VvcdQuqQGEOC0AgojFORVesLjSoESfHJY40A=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 20ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 00:06:17 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 96ms (Views: 92.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-03-01 00:06:23 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 106ms (Views: 103.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-01 00:06:38 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KdOC3krnbgtk8kmin9g22sUSlD/XT7xkCxQIO13Xaij2rpZ6/zan5YqTlOA3hCq7G6H2HZf8KHK14PM0EVFxPQ==", "user"=>{"email"=>"boop@boop.com", "fname"=>"Kevin", "lname"=>"Jones", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "boop@boop.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "fname", "lname") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "boop@boop.com"], ["encrypted_password", "$2a$11$gpxXDXCnVCrGlI0t0kVnoePAOhE9HC/Jda3vYRNZzmSIxpVbHvriC"], ["created_at", "2019-03-01 06:06:38.482141"], ["updated_at", "2019-03-01 06:06:38.482141"], ["fname", "Kevin"], ["lname", "Jones"]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 162ms (ActiveRecord: 16.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 00:06:38 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:37
+  Rendered pages/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 128ms (Views: 123.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 00:07:01 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:37
+  Rendered pages/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 118ms (Views: 113.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 00:07:13 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:37
+  Rendered pages/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 145ms (Views: 140.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2019-03-01 00:12:11 -0600
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gmx44Uw+AEcu/uy/7MGPd4OCzBDkGlfo8ZaaHib0hEapG8Ks5a3Mu23jiq9p+dUAG1wA9PN3TbpTiti+w7Sh7A=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 24ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 00:12:11 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 106ms (Views: 102.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-03-01 00:12:15 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 139ms (Views: 136.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-01 00:12:25 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gHS+f2YMul9jvvoDW5WpwDyw0ir2HoX5idpVJUxpeeSkJjhUN92StUD3eLteeC/jmcGfPcC8PTl3zs636y/EdQ==", "user"=>{"email"=>"booop@fart.com", "fname"=>"", "lname"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "booop@fart.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 321ms (Views: 181.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-01 00:22:30 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"C0+VSD1gHeTQbvl0PQ8mw3smU6QcpHc7wQX5l9kkzf90mj9TOCl0YKa3TC4ilLNuFIG7veQHESHFYrhGNKbY3g==", "user"=>{"email"=>"booop@fart.com", "fname"=>"", "lname"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "booop@fart.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 281ms (Views: 119.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-03-01 00:23:14 -0600
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+actionpack (5.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.2) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.2) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.2) lib/rails/engine.rb:524:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-03-01 00:23:17 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 143ms (Views: 137.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-03-01 00:23:19 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 143ms (Views: 140.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-03-01 00:23:20 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Km6wHjyOtBYdbLPuoIZ+9/FUbRGjPeAY9WeIHRTiRDk3R0/uhHkqctTMs2gRth9ie8aDoyx7xjgsJCPEjSXosA==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 122ms (ActiveRecord: 0.6ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Km6wHjyOtBYdbLPuoIZ+9/FUbRGjPeAY9WeIHRTiRDk3R0/uhHkqctTMs2gRth9ie8aDoyx7xjgsJCPEjSXosA==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 236ms (Views: 118.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-03-01 00:23:23 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S96Zsdp8lyPFff+AsD3kVplSpP3pM5PtfZVba1P4xm40CzOq3zX+p7OkStqvpnH79vVM5BGQ9fd58hq6vnrTTw==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 120ms (ActiveRecord: 0.7ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"S96Zsdp8lyPFff+AsD3kVplSpP3pM5PtfZVba1P4xm40CzOq3zX+p7OkStqvpnH79vVM5BGQ9fd58hq6vnrTTw==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 224ms (Views: 107.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-03-01 00:23:25 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ld0JlllFOw7xOaxyL82D2XbRGPfcI6vMwA2Og5NT09vqCKONXAxSiofgGSgwVhZ0GXbw7iSAzdbEas9SftHG+g==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 123ms (ActiveRecord: 0.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ld0JlllFOw7xOaxyL82D2XbRGPfcI6vMwA2Og5NT09vqCKONXAxSiofgGSgwVhZ0GXbw7iSAzdbEas9SftHG+g==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 244ms (Views: 114.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-03-01 00:23:27 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 124ms (Views: 123.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-01 00:23:38 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZNN1xHw5ZtJBPI6yn/XM07zWN0yx9EWcsizwwTcGCutAgfPvLehOOGJ1DAqaGErwGad6W4dW/VxMOGtTkEC3eg==", "user"=>{"email"=>"boop@boop.com", "fname"=>"brandon", "lname"=>"martinez", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "boop@boop.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 251ms (Views: 111.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-01 00:23:47 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TCuh6RF33+PdZcriAhwG+reT8Klw69VPbVF9XpZBF4kz/gvyFD62Z6u8f7gdh5NX2DQYsIhIs1VpNjyPe8MCqA==", "user"=>{"email"=>"boop12@boop.com", "fname"=>"brandon", "lname"=>"martinez", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "boop12@boop.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (1.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "fname", "lname") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "boop12@boop.com"], ["encrypted_password", "$2a$11$LKZGFaDg9JDJOatm/KwbNeqbUrPJKhDLkZxyT/UMfU.EKwFNZhSz."], ["created_at", "2019-03-01 06:23:47.521715"], ["updated_at", "2019-03-01 06:23:47.521715"], ["fname", "brandon"], ["lname", "martinez"]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (16.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 163ms (ActiveRecord: 18.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-01 00:23:47 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:37
+  Rendered pages/index.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 131ms (Views: 126.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/videogames" for 127.0.0.1 at 2019-03-01 00:23:53 -0600
+Processing by VideogamesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:8
+  Rendering videogames/index.html.erb within layouts/application
+  [1m[36mVideogame Load (0.4ms)[0m  [1m[34mSELECT "videogames".* FROM "videogames" WHERE "videogames"."user_id" = ?[0m  [["user_id", 8]]
+  ↳ app/views/videogames/index.html.erb:49
+  Rendered videogames/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 120ms (Views: 107.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/videogames/new" for 127.0.0.1 at 2019-03-01 00:23:57 -0600
+Processing by VideogamesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:22
+  Rendering videogames/new.html.erb within layouts/application
+  Rendered videogames/_form.html.erb (3.0ms)
+  Rendered videogames/new.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 126ms (Views: 103.3ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/videogames" for 127.0.0.1 at 2019-03-01 00:24:02 -0600
+Processing by VideogamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ap5EeeX9+iyi8aRD4JndZUk6STYmOcSS9duyII3X49vXjRxmPMiInvnNVfNfKv0sp7AE08RbD8n88F0l0mIFuQ==", "videogame"=>{"title"=>"", "publisher"=>"", "platform"=>"", "year"=>"", "condition"=>"", "upc"=>""}, "commit"=>"Create Video Game"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videogames_controller.rb:34
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/videogames_controller.rb:34
+  Rendering videogames/new.html.erb within layouts/application
+  Rendered videogames/_form.html.erb (3.0ms)
+  Rendered videogames/new.html.erb within layouts/application (11.1ms)
+Completed 200 OK in 128ms (Views: 112.0ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/videogames" for 127.0.0.1 at 2019-03-01 00:26:31 -0600
+Processing by VideogamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5GAMoIgXwXWZDr4d8aitJ4Of96dEQBTXRD7atr1wdjCbtaa7jV6o8e/XC0fuMziK7Dgfvrzjcs1AWZtnUPJjEQ==", "videogame"=>{"title"=>"", "publisher"=>"", "platform"=>"", "year"=>"", "condition"=>"", "upc"=>""}, "commit"=>"Create Video Game"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:32
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 2.2ms)
+
+
+  
+SyntaxError (/mnt/c/Users/bmmar/Documents/GitHub/collection-manager/app/models/videogame.rb:7: syntax error, unexpected end-of-input, expecting end):
+  
+app/models/videogame.rb:7: syntax error, unexpected end-of-input, expecting end
+app/controllers/videogames_controller.rb:32:in `create'
+Started GET "/videogames" for 127.0.0.1 at 2019-03-01 00:26:39 -0600
+Processing by VideogamesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:8
+  Rendering videogames/index.html.erb within layouts/application
+  [1m[36mVideogame Load (0.3ms)[0m  [1m[34mSELECT "videogames".* FROM "videogames" WHERE "videogames"."user_id" = ?[0m  [["user_id", 8]]
+  ↳ app/views/videogames/index.html.erb:49
+  Rendered videogames/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 151ms (Views: 116.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/videogames/new" for 127.0.0.1 at 2019-03-01 00:26:41 -0600
+Processing by VideogamesController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:22
+  Rendering videogames/new.html.erb within layouts/application
+  Rendered videogames/_form.html.erb (3.6ms)
+  Rendered videogames/new.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 125ms (Views: 102.8ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/videogames" for 127.0.0.1 at 2019-03-01 00:26:42 -0600
+Processing by VideogamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"y7d7pWV/Kw7yupRc01Y6ONnGZswtvntrSjdfwgTokb12pCO6vEpZvKmGZexs5RpxN0wrKc/csDBDHLDHW1133w==", "videogame"=>{"title"=>"", "publisher"=>"", "platform"=>"", "year"=>"", "condition"=>"", "upc"=>""}, "commit"=>"Create Video Game"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/videogames_controller.rb:32
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.8ms)
+
+
+  
+NoMethodError (undefined method `title_is' for #<Videogame:0x00007feb1037efa8>
+Did you mean?  title_was):
+  
+app/models/videogame.rb:5:in `block in <class:Videogame>'
+app/controllers/videogames_controller.rb:32:in `create'
+Started GET "/videogames" for 127.0.0.1 at 2019-03-01 00:26:57 -0600
+Processing by VideogamesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:8
+  Rendering videogames/index.html.erb within layouts/application
+  [1m[36mVideogame Load (0.6ms)[0m  [1m[34mSELECT "videogames".* FROM "videogames" WHERE "videogames"."user_id" = ?[0m  [["user_id", 8]]
+  ↳ app/views/videogames/index.html.erb:49
+  Rendered videogames/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 129ms (Views: 97.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/videogames/new" for 127.0.0.1 at 2019-03-01 00:26:59 -0600
+Processing by VideogamesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:22
+  Rendering videogames/new.html.erb within layouts/application
+  Rendered videogames/_form.html.erb (2.8ms)
+  Rendered videogames/new.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 128ms (Views: 107.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/videogames" for 127.0.0.1 at 2019-03-01 00:27:00 -0600
+Processing by VideogamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"n6YsngQtOrmncdTlWF9OIQMhQYV+FXED2npH+ZltcsYitXSB3RhIC/xNJVXn7G5o7asMYJx3uljTUaj8xtiUpA==", "videogame"=>{"title"=>"", "publisher"=>"", "platform"=>"", "year"=>"", "condition"=>"", "upc"=>""}, "commit"=>"Create Video Game"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/videogames_controller.rb:32
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.7ms)
+
+
+  
+NoMethodError (undefined method `add_to_base' for #<ActiveModel::Errors:0x00007feb0462e7f0>):
+  
+app/models/videogame.rb:5:in `block in <class:Videogame>'
+app/controllers/videogames_controller.rb:32:in `create'
