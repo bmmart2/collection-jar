@@ -1,5 +1,4 @@
 <!--<p id="notice"><%= notice %></p>-->
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="/">
     <%= image_tag ("logo.png"), :size=> "55x65"%>
@@ -7,14 +6,6 @@
   <a class="navbar-brand" href="/">Video Games</a>
 
   <!-- Spacing -->
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    </ul>
-  </div>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     </ul>
@@ -32,7 +23,6 @@
     </ul>
 
   </nav>
-
   <section class="jumbotron">
     <div class="container">
       <div class="row">
@@ -56,12 +46,11 @@
         <div class="col"><%= videogame.upc %></div>
         <div class="col"><a class="btn btn-info btn-sm"<%= link_to 'Show', videogame %></a></div>
         <div class="col"><a class="btn btn-info btn-sm"<%= link_to 'Edit', edit_videogame_path(videogame) %></a></div>
-        <div class="col"><a class="btn btn-danger btn-sm"<%= link_to 'Destroy', videogame, method: :delete, data: { confirm: 'Are you sure' } %></a></div>
+        <div class="col"><a class="btn btn-danger btn-sm"<%= link_to 'Destroy', videogame, method: :delete, data: { confirm: 'Are you sure?' } %></a></div>
       </div>
       <% end %>
     </div>
   </section>
-  <br>
   <body class="text-center">
     <div class= "container container--xs">
       <a class="btn btn-primary my-2"<%= link_to 'Create New Video Game', new_videogame_path %></a>
