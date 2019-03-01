@@ -4208,3 +4208,259 @@ Processing by PagesController#index as HTML
 Completed 200 OK in 72ms (Views: 68.6ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-16 04:21:08 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1514.1ms)
+Completed 200 OK in 1879ms (Views: 1870.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/videogames" for 127.0.0.1 at 2019-02-16 04:21:15 -0600
+Processing by VideogamesController#index as HTML
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-16 04:21:15 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 129ms (Views: 126.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-02-16 04:21:18 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (187.8ms)
+Completed 200 OK in 299ms (Views: 272.6ms | ActiveRecord: 1.4ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-02-16 04:21:23 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FQ48bBDb0cx0awno+1x/5CqcJ02FCPtM2MCCcVZeb8C+wLJinNaEob+UfEDvxXyaOyQtSEWMHTDFXonh2SGzNg==", "user"=>{"email"=>"test@doot.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@doot.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 253ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-16 04:21:23 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:40
+  Rendered pages/index.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 82ms (Views: 79.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/videogames" for 127.0.0.1 at 2019-02-16 04:21:24 -0600
+Processing by VideogamesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:8
+  Rendering videogames/index.html.erb within layouts/application
+  [1m[36mVideogame Load (0.4ms)[0m  [1m[34mSELECT "videogames".* FROM "videogames" WHERE "videogames"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/videogames/index.html.erb:49
+  Rendered videogames/index.html.erb within layouts/application (41.3ms)
+Completed 200 OK in 238ms (Views: 120.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/videogames/9" for 127.0.0.1 at 2019-02-16 04:21:35 -0600
+Processing by VideogamesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mVideogame Load (0.4ms)[0m  [1m[34mSELECT  "videogames".* FROM "videogames" WHERE "videogames"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:71
+  Rendering videogames/show.html.erb within layouts/application
+  Rendered videogames/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 83ms (Views: 75.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-16 04:22:09 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:40
+  Rendered pages/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 86ms (Views: 81.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-28 22:59:28 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (1895.6ms)
+Completed 200 OK in 2191ms (Views: 2146.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-02-28 22:59:35 -0600
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (236.0ms)
+Completed 200 OK in 378ms (Views: 353.1ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-02-28 22:59:39 -0600
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QVvJjcktC26DJ1cF61lasEp8dubcuwUIyms31b56UDV0ICJxUnM1SgWrxLXynt+PnXC8UL8xSpWunMPrHHdODA==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 29ms (ActiveRecord: 0.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QVvJjcktC26DJ1cF61lasEp8dubcuwUIyms31b56UDV0ICJxUnM1SgWrxLXynt+PnXC8UL8xSpWunMPrHHdODA==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 289ms (Views: 115.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2019-02-28 22:59:41 -0600
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 112ms (Views: 111.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-02-28 22:59:56 -0600
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G2Vp4phbk9CE4AWk+wRENm1wMzxntavzXVbMUFAc0TJD1kZCUv29cncEbudp9tyKx50SWPwQB5QB2Ll0PAPSEw==", "user"=>{"email"=>"test@test.com", "fname"=>"Brandon", "lname"=>"Martinez", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+Unpermitted parameters: :fname, :lname
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[36mUser Create (2.7ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "test@test.com"], ["encrypted_password", "$2a$11$8Ldk8fXXodnQkQiGYV2OBe7dVuPAuTmlquMCDM/9nVkwIFYXyFG/6"], ["created_at", "2019-03-01 04:59:56.833302"], ["updated_at", "2019-03-01 04:59:56.833302"]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+  [1m[35m (22.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 187ms (ActiveRecord: 25.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-28 22:59:56 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:40
+  Rendered pages/index.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 131ms (Views: 126.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/videogames" for 127.0.0.1 at 2019-02-28 23:00:13 -0600
+Processing by VideogamesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:8
+  Rendering videogames/index.html.erb within layouts/application
+  [1m[36mVideogame Load (0.3ms)[0m  [1m[34mSELECT "videogames".* FROM "videogames" WHERE "videogames"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/videogames/index.html.erb:49
+  Rendered videogames/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 194ms (Views: 92.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/videogames/new" for 127.0.0.1 at 2019-02-28 23:00:16 -0600
+Processing by VideogamesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:22
+  Rendering videogames/new.html.erb within layouts/application
+  Rendered videogames/_form.html.erb (12.6ms)
+  Rendered videogames/new.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 166ms (Views: 123.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/videogames" for 127.0.0.1 at 2019-02-28 23:00:35 -0600
+Processing by VideogamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YbiOyfl97LHHD965bt5BYpP6qMmQeWR2pZrUi23TZP4fEb76xEiJyDOE6LQXp9DBYvGlJtB6xs/TrI+26NyDkA==", "videogame"=>{"title"=>"Super Mario Bros.", "publisher"=>"Nintendo", "platform"=>"NES", "year"=>"1985", "condition"=>"1", "upc"=>"1234567809"}, "commit"=>"Create Video Game"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[36mVideogame Create (1.6ms)[0m  [1m[32mINSERT INTO "videogames" ("title", "publisher", "condition", "platform", "year", "upc", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Super Mario Bros."], ["publisher", "Nintendo"], ["condition", 1], ["platform", "NES"], ["year", "1985"], ["upc", "1234567809"], ["created_at", "2019-03-01 05:00:35.374475"], ["updated_at", "2019-03-01 05:00:35.374475"], ["user_id", 5]]
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (17.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videogames_controller.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videogames_controller.rb:34
+Redirected to http://localhost:3000/videogames/14
+Completed 302 Found in 40ms (ActiveRecord: 20.5ms)
+
+
+Started GET "/videogames/14" for 127.0.0.1 at 2019-02-28 23:00:35 -0600
+Processing by VideogamesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mVideogame Load (0.4ms)[0m  [1m[34mSELECT  "videogames".* FROM "videogames" WHERE "videogames"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:71
+  Rendering videogames/show.html.erb within layouts/application
+  Rendered videogames/show.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 125ms (Views: 118.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/videogames" for 127.0.0.1 at 2019-02-28 23:00:39 -0600
+Processing by VideogamesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:8
+  Rendering videogames/index.html.erb within layouts/application
+  [1m[36mVideogame Load (0.4ms)[0m  [1m[34mSELECT "videogames".* FROM "videogames" WHERE "videogames"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/videogames/index.html.erb:49
+  Rendered videogames/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 101ms (Views: 91.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-28 23:00:48 -0600
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:40
+  Rendered pages/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 103ms (Views: 97.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/videogames" for 127.0.0.1 at 2019-02-28 23:43:27 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by VideogamesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:8
+  Rendering videogames/index.html.erb within layouts/application
+  [1m[36mVideogame Load (0.5ms)[0m  [1m[34mSELECT "videogames".* FROM "videogames" WHERE "videogames"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/videogames/index.html.erb:49
+  Rendered videogames/index.html.erb within layouts/application (498.0ms)
+Completed 200 OK in 801ms (Views: 747.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/videogames/new" for 127.0.0.1 at 2019-02-28 23:43:29 -0600
+Processing by VideogamesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:22
+  Rendering videogames/new.html.erb within layouts/application
+  Rendered videogames/_form.html.erb (25.9ms)
+  Rendered videogames/new.html.erb within layouts/application (33.9ms)
+Completed 200 OK in 191ms (Views: 179.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/videogames" for 127.0.0.1 at 2019-02-28 23:43:36 -0600
+Processing by VideogamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"z/WSYxYsu/GcyJ40bt4q6LVPwdB29CAS4nS2D9Hh4AqxXKJQKxneiGhDqDkXp7tLRETMPzb3gquUQu0yVO4HZA==", "videogame"=>{"title"=>"", "publisher"=>"lol", "platform"=>"lol", "year"=>"1", "condition"=>"1", "upc"=>"lol"}, "commit"=>"Create Video Game"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videogames_controller.rb:34
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/videogames_controller.rb:34
+  Rendering videogames/new.html.erb within layouts/application
+  Rendered videogames/_form.html.erb (3.7ms)
+  Rendered videogames/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 153ms (Views: 133.8ms | ActiveRecord: 1.0ms)
+
+
