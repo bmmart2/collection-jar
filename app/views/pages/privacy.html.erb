@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/pages/index">
+      <%= image_tag ("logo.png"), :size=> "55x65"%>
+    </a>
+    <a class="navbar-brand" href="/pages/index">Collection Jar</a>
+
+      <!-- Spacing -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      </div>
+
+      <!-- Search bar -->
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+      <!-- Additional Spacing -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+      </div>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown py-0 px-md-5">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <% if user_signed_in? %>
+                    Hello, <%= current_user.fname %>!
+              <% else %>
+                    Hello, User!
+              <% end %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <% if user_signed_in? %>
+                  <a class="dropdown-item" <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+
+              <% else %>
+                  <a class="dropdown-item" <%= link_to('Login', new_user_session_path)  %></a>
+                  <a class="dropdown-item" <%= link_to('Sign up', new_user_registration_path)  %></a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" <%= link_to('Forgot password?', new_user_password_path) %></a>
+
+              <% end %>
+
+            </div>
+          </li>
+        </ul>
+
+  </nav>
+<!-- Body -->
+<body>
+  <div class="container">
+      <div class="col-sm-13">
+        <main role="main">
+          <section class="jumbotron text-center">
+            <div class="container">
+              <h1 class="jumbotron-heading">PRIVACY</h1>
+              <p class="lead text-muted">
+                <strong>Updated March 1, 2019</strong><br><br>
+                At Collection Jar, we have only these policies:<br>
+
+                <b>WORK IN PROGRESS</b>
+                </p>
+            </div>
+          </section>
+        </main>
+      </div>
+     </div>
+  </div>
+</body>
+<!-- Footer -->
+  <footer class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md">
+        <%= image_tag ("logo.png"), :size=> "110x140"%>
+        <small class="d-block mb-3 text-muted">&copy; 2019 Collection Jar</small>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Collection Jar</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" <%= link_to('Video Games', videogames_path) %></a></li>
+          <li><a class="text-muted" href="#">Movies</a></li>
+          <li><a class="text-muted" href="#">Music</a></li>
+          <li><a class="text-muted" href="#">Vinyls</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>Resources</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="https://rubyonrails.org">Ruby on Rails</a></li>
+          <li><a class="text-muted" href="https://getbootstrap.com/">Bootstrap</a></li>
+          <li><a class="text-muted" href="https://www.imdb.com/">IMDb</a></li>
+          <li><a class="text-muted" href="#">Etc.</a></li>
+        </ul>
+      </div>
+      <div class="col-6 col-md">
+        <h5>About Us</h5>
+        <ul class="list-unstyled text-small">
+          <!-- opens a new tab for these links -->
+          <li><a class="text-muted" href="https://github.com/bmmart2/collection-manager" target="_blank">GitHub</a></li>
+          <li><a class="text-muted" href="/pages/team">Team</a></li>
+          <li><a class="text-muted" href="/pages/privacy">Privacy</a></li>
+          <li><a class="text-muted" href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="float-left">
+      <a href="#">Back to top</a>
+    </p>
+  </footer>
+</html>
