@@ -6,4 +6,14 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get privacy" do
+    get pages_items_url
+    assert_response :success
+  end
+
+  test "should get team" do
+    get pages_team_url
+    assert_response :success
+  end
+
 end

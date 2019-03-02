@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'pages/privacy'
+  get 'pages/team'
+  get 'pages/index'
   resources :videogames
   get 'login/signin'
   root 'pages#index'
