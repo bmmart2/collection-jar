@@ -2,10 +2,10 @@
 <html>
 <!-- Header -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
-      <img src="https://i.imgur.com/RJ5XUmI.png" width="55" height="65" alt="logo">
+    <a class="navbar-brand" href="/pages/index">
+      <%= image_tag ("logo.png"), :size=> "55x65"%>
     </a>
-    <a class="navbar-brand" href="#">Collection Jar</a>
+    <a class="navbar-brand" href="/pages/index">Collection Jar</a>
 
       <!-- Spacing -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -13,28 +13,25 @@
       </ul>
       </div>
 
+      <!-- Search bar -->
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="search..." aria-label="Search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
       </form>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+
+      <!-- Additional Spacing -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
         </ul>
       </div>
-<!-- Maybe need in future?
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-        </ul>
--->
         <ul class="navbar-nav mr-auto">
           <li class="nav-item dropdown py-0 px-md-5">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Hello, User!
+              <% if user_signed_in? %>
+                    Hello, <%= current_user.fname %>!
+              <% else %>
+                    Hello, User!
+              <% end %>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <% if user_signed_in? %>
@@ -45,8 +42,8 @@
                   <a class="dropdown-item" <%= link_to('Sign up', new_user_registration_path)  %></a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" <%= link_to('Forgot password?', new_user_password_path) %></a>
-              <% end %>
 
+              <% end %>
 
             </div>
           </li>
@@ -62,7 +59,7 @@
           <section class="jumbotron text-center">
             <div class="container">
               <h1 class="jumbotron-heading">Meet the Team of Collection Jar</h1>
-              <p class="lead text-muted"> Collection Jar is being developed and designed by LSU computer science students Brandon Martinez, Timothy Pease, Cody East, James Chi, and Stephen Daniel!</p>
+              <p class="lead text-muted"> Collection Jar is developed and designed by LSU Computer Science students: Brandon Martinez, Timothy Pease, Cody East, James Chi, and Stephen Daniel!</p>
             </div>
           </section>
         </main>
@@ -74,13 +71,13 @@
   <footer class="container py-5">
     <div class="row">
       <div class="col-12 col-md">
-        <img src="https://i.imgur.com/RJ5XUmI.png" width="110" height="140" alt="logo"</img>
-        <small class="d-block mb-3 text-muted">&copy; 2019</small>
+        <%= image_tag ("logo.png"), :size=> "110x140"%>
+        <small class="d-block mb-3 text-muted">&copy; 2019 Collection Jar</small>
       </div>
       <div class="col-6 col-md">
         <h5>Collection Jar</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Video Games</a></li>
+          <li><a class="text-muted" <%= link_to('Video Games', videogames_path) %></a></li>
           <li><a class="text-muted" href="#">Movies</a></li>
           <li><a class="text-muted" href="#">Music</a></li>
           <li><a class="text-muted" href="#">Vinyls</a></li>
@@ -98,12 +95,16 @@
       <div class="col-6 col-md">
         <h5>About Us</h5>
         <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="https://github.com/bmmart2/collection-manager">GitHub</a></li>
-          <li><a class="text-muted" href="#">Team</a></li>
-          <li><a class="text-muted" href="#">Privacy</a></li>
+          <!-- opens a new tab for these links -->
+          <li><a class="text-muted" href="https://github.com/bmmart2/collection-manager" target="_blank">GitHub</a></li>
+          <li><a class="text-muted" href="/pages/team">Team</a></li>
+          <li><a class="text-muted" href="/pages/privacy">Privacy</a></li>
           <li><a class="text-muted" href="#">Terms</a></li>
         </ul>
       </div>
     </div>
+    <p class="float-left">
+      <a href="#">Back to top</a>
+    </p>
   </footer>
 </html>
