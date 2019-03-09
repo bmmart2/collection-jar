@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/upload'
   get 'pages/terms'
   get 'pages/privacy'
   get 'pages/team'
