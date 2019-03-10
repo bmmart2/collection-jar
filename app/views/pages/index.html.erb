@@ -16,7 +16,7 @@
 
       <!-- Search bar -->
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search Video Games, Movies, and more..." aria-label="Search">
         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
       </form>
 
@@ -54,6 +54,9 @@
   .navbar {
     margin-bottom: 25px;
   }
+  .jumbotron-heading {
+    padding-left: 30px;
+  }
   </style>
   </head>
 <!-- Body -->
@@ -78,7 +81,7 @@
                   <div class="carousel-caption text-left">
                     <h1>Getting Started</h1>
                     <p>Choose from one of the following options below and start your collection, if you want to create a custom collection other than our preset options click on <strong>Create Custom</strong>.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Create Custom</a></p>
+                    <p><a class="btn btn-lg btn-collection" href="#" role="button">Create Custom</a></p>
                   </div>
                 </div>
               </div>
@@ -90,7 +93,7 @@
                   <div class="carousel-caption">
                     <h1>Display</h1>
                     <p>Do you want to showcase your items for sale or display? Users that list their items for display can be easily accessed by others through our search function. The item will display price values from Ebay/Amazon.</p>
-                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                    <p><a class="btn btn-lg btn-collection" href="#" role="button">Learn more</a></p>
                   </div>
                 </div>
               </div>
@@ -102,7 +105,7 @@
                   <div class="carousel-caption">
                     <h1>Upload</h1>
                     <p>Do you already have a CSV file storing pre-existing information for your collection? No problem, you can upload your CSV file and generate your collection on our website!</p>
-                    <p><a class="btn btn-lg btn-primary" href="/pages/upload" role="button">Upload file</a></p>
+                    <p><a class="btn btn-lg btn-collection" href="/pages/upload" role="button">Upload file</a></p>
                   </div>
                 </div>
               </div>
@@ -125,7 +128,7 @@
               <h1 class="jumbotron-heading">Track Your Collection</h1>
               <p class="lead text-muted">Collection Jar is a where you can <strong> create, update, and manage </strong> your personal collections—video games, movies, music, and more. Make your own collection and begin tracking your collectibles now!</p>
               <p>
-                <a class="btn btn-primary my-2"<%= link_to('Start Collection', new_user_registration_path) %></a>
+                <a class="btn btn-collection my-2"<%= link_to('Start Collection', new_user_registration_path) %></a>
               </p>
             </div>
           </section>
