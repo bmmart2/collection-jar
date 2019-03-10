@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  publisher: MyString
+  platform: MyString
+  year: 1
+  condition: 1
+  upc: 
+
+two:
+  title: MyString
+  publisher: MyString
+  platform: MyString
+  year: 1
+  condition: 1
+  upc: 
