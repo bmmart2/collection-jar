@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @vinyl.title %>
+</p>
+
+<p>
+  <strong>Artist:</strong>
+  <%= @vinyl.artist %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @vinyl.year %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @vinyl.condition %>
+</p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @vinyl.label %>
+</p>
+
+<%= link_to 'Edit', edit_vinyl_path(@vinyl) %> |
+<%= link_to 'Back', vinyls_path %>
