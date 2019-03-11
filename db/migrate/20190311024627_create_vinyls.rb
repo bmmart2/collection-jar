@@ -4,10 +4,11 @@ class CreateVinyls < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :artist
       t.string :year
-      t.int :condition
+      t.integer :condition
       t.string :label
 
       t.timestamps
+      add_index :videogames, :user
     end
   end
 end

@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :videogames, dependent: :destroy
+  has_many :vinyls, dependent: :destroy
   validates :fname, :lname, :presence => true
 
 end

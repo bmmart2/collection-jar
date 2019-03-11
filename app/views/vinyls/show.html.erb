@@ -1,29 +1,41 @@
-<p id="notice"><%= notice %></p>
+<html lang="en">
+  <head>
+    <link href="https://getbootstrap.com/docs/4.2/examples/sign-in/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <div class= "container container--xs">
+    <p id="notice"><strong><%= notice %></strong></p>
+    <!-- Placeholder image here for future images grabbed
+     from database for each specific image -->
+    <%= image_tag ("videogame.png"), :size=> "120x140"%>
+    <p>
+      <strong>Title:</strong>
+      <%= @vinyl.title %>
+    </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @vinyl.title %>
-</p>
+    <p>
+      <strong>Publisher:</strong>
+      <%= @vinyl.artist %>
+    </p>
 
-<p>
-  <strong>Artist:</strong>
-  <%= @vinyl.artist %>
-</p>
+    <p>
+      <strong>Platform:</strong>
+      <%= @vinyl.label %>
+    </p>
 
-<p>
-  <strong>Year:</strong>
-  <%= @vinyl.year %>
-</p>
+    <p>
+      <strong>Year:</strong>
+      <%= @vinyl.year %>
+    </p>
 
-<p>
-  <strong>Condition:</strong>
-  <%= @vinyl.condition %>
-</p>
+    <p>
+      <strong>Condition:</strong>
+      <%= @vinyl.condition %>
+    </p>
 
-<p>
-  <strong>Label:</strong>
-  <%= @vinyl.label %>
-</p>
 
-<%= link_to 'Edit', edit_vinyl_path(@vinyl) %> |
-<%= link_to 'Back', vinyls_path %>
+    <%= link_to 'Edit', edit_vinyl_path(@vinyl), data: { confirm: 'Are you sure that you want to change this entry?' } %> |
+    <%= link_to 'Back', vinyls_path %>
+  </div>
+</body>
+</html>

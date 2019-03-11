@@ -19488,3 +19488,601 @@ Processing by VideogamesController#index as HTML
 Completed 200 OK in 145ms (Views: 93.6ms | ActiveRecord: 1.0ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateVinyls (20190311024627)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to CreateVinyls (20190311024627)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190311024627_create_vinyls.rb:11
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE  INDEX "index_videogames_on_user" ON "videogames" ("user")[0m
+  ↳ db/migrate/20190311024627_create_vinyls.rb:11
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "vinyls" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "artist" varchar, "year" varchar, "condition" integer, "label" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190311024627_create_vinyls.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190311024627"]]
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (16.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Migrating to AddUserRefsToVinyl (20190311025333)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.9ms)[0m  [1m[35mALTER TABLE "vinyls" ADD "user_id" integer[0m
+  ↳ db/migrate/20190311025333_add_user_refs_to_vinyl.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_vinyls_on_user_id" ON "vinyls" ("user_id")[0m
+  ↳ db/migrate/20190311025333_add_user_refs_to_vinyl.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190311025333"]]
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (22.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (1.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bmmart2/.rvm/rubies/ruby-2.6.0/lib/ruby/gems/2.6.0/gems/rake-12.3.2/lib/rake/task.rb:273
+Started GET "/" for 127.0.0.1 at 2019-03-10 21:54:19 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:31
+  Rendered pages/index.html.erb within layouts/application (3006.9ms)
+Completed 200 OK in 3234ms (Views: 3219.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2019-03-10 21:54:29 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 191ms (Views: 188.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-03-10 21:54:30 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"658NKEdl2E59vEfl7YaZ6LY0EU41+LNs4dEmtFHrlv9jSU06xYqk+0OiDDBcehfuQL8Neo5IgYV2ATa2j5MATQ==", "user"=>{"email"=>"test@test123.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test123.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.5ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"658NKEdl2E59vEfl7YaZ6LY0EU41+LNs4dEmtFHrlv9jSU06xYqk+0OiDDBcehfuQL8Neo5IgYV2ATa2j5MATQ==", "user"=>{"email"=>"test@test123.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 285ms (Views: 162.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-03-10 21:54:35 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iaruu90WUfUC83W1G0FIHoa1WfzRkfeATmjdBqaMM8Cin9v3r1dVvzteJD/FMiBocooIX13w/JXDx4BeAx88Fw==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 122ms (ActiveRecord: 0.6ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iaruu90WUfUC83W1G0FIHoa1WfzRkfeATmjdBqaMM8Cin9v3r1dVvzteJD/FMiBocooIX13w/JXDx4BeAx88Fw==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 225ms (Views: 109.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-03-10 21:54:38 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TKtDQgYzwZpyroFei+LP7QNd34RBG2FCLHp6f3L1+U5nnnYOdHLF0EsD0NRVkaeb92KOJ816aleh1Scn12b2mQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Completed 401 Unauthorized in 121ms (ActiveRecord: 0.4ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TKtDQgYzwZpyroFei+LP7QNd34RBG2FCLHp6f3L1+U5nnnYOdHLF0EsD0NRVkaeb92KOJ816aleh1Scn12b2mQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 220ms (Views: 105.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2019-03-10 21:54:41 -0500
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"APgsqsVarZ+L5ewOnWQLYDOBfz9LrkFEupBbkK4fDa0rzRnmtxup1bJIvYRDF2MWx74unMfPSlE3PwbIC4wCeg==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ /home/bmmart2/.rvm/gems/ruby-2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 142ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-10 21:54:42 -0500
+Processing by PagesController#index as HTML
+  Rendering pages/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/pages/index.html.erb:31
+  Rendered pages/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 115ms (Views: 111.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vinyls" for 127.0.0.1 at 2019-03-10 21:54:49 -0500
+  
+SyntaxError (/mnt/c/Users/bmmar/Documents/GitHub/collection-manager/app/controllers/vinyls_controller.rb:1: class/module name must be CONSTANT
+class vinylsController < ApplicationController
+      ^~~~~~~~~~~~~~~~):
+  
+app/controllers/vinyls_controller.rb:1: class/module name must be CONSTANT
+Started GET "/vinyls" for 127.0.0.1 at 2019-03-10 21:55:08 -0500
+Processing by VinylsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:8
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.9ms)
+
+
+  
+NoMethodError (undefined method `vinyls' for #<User:0x00007f8ee420a218>):
+  
+app/controllers/vinyls_controller.rb:9:in `index'
+Started GET "/vinyls" for 127.0.0.1 at 2019-03-10 21:55:47 -0500
+Processing by VinylsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:8
+  Rendering vinyls/index.html.erb within layouts/application
+  Rendered vinyls/index.html.erb within layouts/application (7.4ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 2.9ms)
+
+
+  
+ActionView::Template::Error (The asset "vinyl.png" is not present in the asset pipeline.):
+    51:   <body>
+    52:     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    53:       <a class="navbar-brand" href="/">
+    54:         <%= image_tag ("vinyl.png"), :size=> "55x65"%>
+    55:       </a>
+    56:       <a class="navbar-brand" href="/">Vinyls</a>
+    57: 
+  
+app/views/vinyls/index.html.erb:54:in `_app_views_vinyls_index_html_erb__2208691279195771302_70125923408740'
+Started GET "/vinyls" for 127.0.0.1 at 2019-03-10 21:56:24 -0500
+Processing by VinylsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:8
+  Rendering vinyls/index.html.erb within layouts/application
+  [1m[36mVinyl Load (0.4ms)[0m  [1m[34mSELECT "vinyls".* FROM "vinyls" WHERE "vinyls"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/vinyls/index.html.erb:94
+  Rendered vinyls/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 110ms (Views: 104.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/vinyls/new" for 127.0.0.1 at 2019-03-10 21:56:26 -0500
+Processing by VinylsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:22
+  Rendering vinyls/new.html.erb within layouts/application
+  Rendered vinyls/_form.html.erb (348.6ms)
+  Rendered vinyls/new.html.erb within layouts/application (354.5ms)
+Completed 500 Internal Server Error in 396ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `vinyl' for #<#<Class:0x00007f8eed822de0>:0x00007f8eee07d378>
+Did you mean?  @vinyl):
+    1: <%= form_with(model: vinyl, local: true) do |form| %>
+    2:   <% if vinyl.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(vinyl.errors.count, "error") %> prohibited this vinyl from being saved:</h2>
+  
+app/views/vinyls/_form.html.erb:1:in `_app_views_vinyls__form_html_erb__4280557936017102417_70125927890400'
+app/views/vinyls/new.html.erb:6:in `_app_views_vinyls_new_html_erb___1749286936328185644_70125927788540'
+Started GET "/vinyls/new" for 127.0.0.1 at 2019-03-10 21:57:47 -0500
+Processing by VinylsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:22
+  Rendering vinyls/new.html.erb within layouts/application
+  Rendered vinyls/_form.html.erb (376.0ms)
+  Rendered vinyls/new.html.erb within layouts/application (381.7ms)
+Completed 500 Internal Server Error in 396ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `vinyl' for #<#<Class:0x00007f8eed822de0>:0x00007f8ef014c608>
+Did you mean?  @vinyl):
+     5:   </head>
+     6:   <body class="text-center">
+     7:     <div class= "container container--xs">
+     8:       <%= form_with(model: vinyl, local: true) do |form| %>
+     9:         <% if vinyl.errors.any? %>
+    10:           <div id="error_explanation">
+    11:             <h2><%= pluralize(vinyl.errors.count, "error") %> prohibited this vinyl from being saved:</h2>
+  
+app/views/vinyls/_form.html.erb:8:in `_app_views_vinyls__form_html_erb__4280557936017102417_70125945028820'
+app/views/vinyls/new.html.erb:6:in `_app_views_vinyls_new_html_erb___1749286936328185644_70125944989500'
+Started GET "/vinyls/new" for 127.0.0.1 at 2019-03-10 21:59:17 -0500
+Processing by VinylsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:22
+  Rendering vinyls/new.html.erb within layouts/application
+  Rendered vinyls/_form.html.erb (344.7ms)
+  Rendered vinyls/new.html.erb within layouts/application (350.4ms)
+Completed 500 Internal Server Error in 364ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `vinyl' for #<#<Class:0x00007f8eed822de0>:0x00007f8ef0162ae8>
+Did you mean?  @vinyl):
+     5:   </head>
+     6:   <body class="text-center">
+     7:     <div class= "container container--xs">
+     8:       <%= form_with(model: vinyl, local: true) do |form| %>
+     9:         <% if vinyl.errors.any? %>
+    10:           <div id="error_explanation">
+    11:             <h2><%= pluralize(vinyl.errors.count, "error") %> prohibited this vinyl from being saved:</h2>
+  
+app/views/vinyls/_form.html.erb:8:in `_app_views_vinyls__form_html_erb__4280557936017102417_70125944953200'
+app/views/vinyls/new.html.erb:6:in `_app_views_vinyls_new_html_erb___1749286936328185644_70125945035480'
+Started GET "/vinyls/new" for 127.0.0.1 at 2019-03-10 22:01:15 -0500
+Processing by VinylsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:22
+  Rendering vinyls/new.html.erb within layouts/application
+  Rendered vinyls/_form.html.erb (312.7ms)
+  Rendered vinyls/new.html.erb within layouts/application (318.4ms)
+Completed 500 Internal Server Error in 332ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `vinyl' for #<#<Class:0x00007f8eed822de0>:0x00007f8eee03f118>
+Did you mean?  @vinyl):
+     6:   <body class="text-center">
+     7:     <div class= "container container--xs">
+     8:       <%= form_with(model: @vinyl, local: true) do |form| %>
+     9:         <% if vinyl.errors.any? %>
+    10:           <div id="error_explanation">
+    11:             <h2><%= pluralize(vinyl.errors.count, "error") %> prohibited this vinyl from being saved:</h2>
+    12: 
+  
+app/views/vinyls/_form.html.erb:9:in `block in _app_views_vinyls__form_html_erb__4280557936017102417_70125928056280'
+app/views/vinyls/_form.html.erb:8:in `_app_views_vinyls__form_html_erb__4280557936017102417_70125928056280'
+app/views/vinyls/new.html.erb:6:in `_app_views_vinyls_new_html_erb___1749286936328185644_70125927660740'
+Started GET "/vinyls/new" for 127.0.0.1 at 2019-03-10 22:01:29 -0500
+Processing by VinylsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:22
+  Rendering vinyls/new.html.erb within layouts/application
+  Rendered vinyls/_form.html.erb (2.8ms)
+  Rendered vinyls/new.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 106ms (Views: 99.8ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/vinyls" for 127.0.0.1 at 2019-03-10 22:01:37 -0500
+Processing by VinylsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PAeU6fGtBtmDrpXnnxOZxjdM/WmjhYagEWhj0PVcC5P5N3UyaPYgv2WCHieEGhGKabfurFADfQuiuomBQr0BOw==", "vinyl"=>{"title"=>"After Bathing At Baxters", "artist"=>"", "year"=>"", "condition"=>"", "label"=>""}, "commit"=>"Create Vinyl"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:32
+Unpermitted parameters: :artist, :label
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/vinyls_controller.rb:32
+  [1m[36mVinyl Create (1.7ms)[0m  [1m[32mINSERT INTO "vinyls" ("title", "year", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "After Bathing At Baxters"], ["year", ""], ["created_at", "2019-03-11 03:01:37.501486"], ["updated_at", "2019-03-11 03:01:37.501486"], ["user_id", 5]]
+  ↳ app/controllers/vinyls_controller.rb:32
+  [1m[35m (15.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/vinyls_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/vinyls_controller.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/vinyls_controller.rb:34
+Redirected to http://localhost:3000/vinyls/1
+Completed 302 Found in 40ms (ActiveRecord: 17.9ms)
+
+
+Started GET "/vinyls/1" for 127.0.0.1 at 2019-03-10 22:01:37 -0500
+Processing by VinylsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 175ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `vinyl' for #<VinylsController:0x00007f8eedf3d4e0>
+Did you mean?  vinyl_url):
+  
+app/controllers/vinyls_controller.rb:71:in `set_vinyl'
+Started GET "/videogames" for 127.0.0.1 at 2019-03-10 22:01:52 -0500
+Processing by VideogamesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:8
+  Rendering videogames/index.html.erb within layouts/application
+  [1m[36mVideogame Load (0.4ms)[0m  [1m[34mSELECT "videogames".* FROM "videogames" WHERE "videogames"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/videogames/index.html.erb:95
+  Rendered videogames/index.html.erb within layouts/application (46.2ms)
+Completed 200 OK in 165ms (Views: 137.8ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/videogames/14/edit" for 127.0.0.1 at 2019-03-10 22:01:55 -0500
+Processing by VideogamesController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mVideogame Load (0.8ms)[0m  [1m[34mSELECT  "videogames".* FROM "videogames" WHERE "videogames"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:71
+  Rendering videogames/edit.html.erb within layouts/application
+  Rendered videogames/_form.html.erb (3.9ms)
+  Rendered videogames/edit.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 141ms (Views: 130.9ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/videogames/14" for 127.0.0.1 at 2019-03-10 22:01:56 -0500
+Processing by VideogamesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QeEpFPyFzRV9NWDLyUTzqwy+/hhx1HyhnpNN8JIAFB/OBJlv/0W6qKu9Ja1u0klgwJEv7tGQYQMDbTae3zUrjA==", "videogame"=>{"title"=>"Super Mario Bros.", "publisher"=>"Nintendo", "platform"=>"NES", "year"=>"1985", "condition"=>"1", "upc"=>"1234567809"}, "commit"=>"Create Video Game", "id"=>"14"}
+  [1m[36mVideogame Load (0.4ms)[0m  [1m[34mSELECT  "videogames".* FROM "videogames" WHERE "videogames"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:71
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videogames_controller.rb:48
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videogames_controller.rb:48
+Redirected to http://localhost:3000/videogames/14
+Completed 302 Found in 17ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/videogames/14" for 127.0.0.1 at 2019-03-10 22:01:56 -0500
+Processing by VideogamesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mVideogame Load (0.3ms)[0m  [1m[34mSELECT  "videogames".* FROM "videogames" WHERE "videogames"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:71
+  Rendering videogames/show.html.erb within layouts/application
+  Rendered videogames/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 175ms (Views: 169.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/videogames" for 127.0.0.1 at 2019-03-10 22:01:57 -0500
+Processing by VideogamesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:8
+  Rendering videogames/index.html.erb within layouts/application
+  [1m[36mVideogame Load (0.4ms)[0m  [1m[34mSELECT "videogames".* FROM "videogames" WHERE "videogames"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/videogames/index.html.erb:95
+  Rendered videogames/index.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 107ms (Views: 95.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/videogames/new" for 127.0.0.1 at 2019-03-10 22:02:00 -0500
+Processing by VideogamesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:22
+  Rendering videogames/new.html.erb within layouts/application
+  Rendered videogames/_form.html.erb (3.8ms)
+  Rendered videogames/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 115ms (Views: 106.8ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/videogames" for 127.0.0.1 at 2019-03-10 22:02:02 -0500
+Processing by VideogamesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LTE8yIZ+FOdbxKmuyhW99ciIRt9FzMTDJl06CkGeTAPoVkMturPGXqyV9f4WUELWwQOagaDsKEtzkVFjoIp+0w==", "videogame"=>{"title"=>"title", "publisher"=>"", "platform"=>"", "year"=>"", "condition"=>"", "upc"=>""}, "commit"=>"Create Video Game"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[36mVideogame Create (2.1ms)[0m  [1m[32mINSERT INTO "videogames" ("title", "publisher", "platform", "year", "upc", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "title"], ["publisher", ""], ["platform", ""], ["year", ""], ["upc", ""], ["created_at", "2019-03-11 03:02:02.454651"], ["updated_at", "2019-03-11 03:02:02.454651"], ["user_id", 5]]
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (17.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videogames_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videogames_controller.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videogames_controller.rb:34
+Redirected to http://localhost:3000/videogames/19
+Completed 302 Found in 37ms (ActiveRecord: 20.0ms)
+
+
+Started GET "/videogames/19" for 127.0.0.1 at 2019-03-10 22:02:02 -0500
+Processing by VideogamesController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mVideogame Load (0.5ms)[0m  [1m[34mSELECT  "videogames".* FROM "videogames" WHERE "videogames"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:71
+  Rendering videogames/show.html.erb within layouts/application
+  Rendered videogames/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 115ms (Views: 108.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/videogames" for 127.0.0.1 at 2019-03-10 22:02:03 -0500
+Processing by VideogamesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:8
+  Rendering videogames/index.html.erb within layouts/application
+  [1m[36mVideogame Load (0.4ms)[0m  [1m[34mSELECT "videogames".* FROM "videogames" WHERE "videogames"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/videogames/index.html.erb:95
+  Rendered videogames/index.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 100ms (Views: 92.2ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/videogames/19" for 127.0.0.1 at 2019-03-10 22:02:05 -0500
+Processing by VideogamesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"uDqQaEo0drEY0qwhLizrf9c+mm0GpxkMhFg6kG/XKWx9CnGz029Q1/7+J+E1JWMzicWJqPUh4qc3itDB2DYjxA==", "id"=>"19"}
+  [1m[36mVideogame Load (0.5ms)[0m  [1m[34mSELECT  "videogames".* FROM "videogames" WHERE "videogames"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:71
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/videogames_controller.rb:61
+  [1m[36mVideogame Destroy (2.3ms)[0m  [1m[31mDELETE FROM "videogames" WHERE "videogames"."id" = ?[0m  [["id", 19]]
+  ↳ app/controllers/videogames_controller.rb:61
+  [1m[35m (17.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/videogames_controller.rb:61
+Redirected to http://localhost:3000/videogames
+Completed 302 Found in 31ms (ActiveRecord: 20.3ms)
+
+
+Started GET "/videogames" for 127.0.0.1 at 2019-03-10 22:02:05 -0500
+Processing by VideogamesController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/videogames_controller.rb:8
+  Rendering videogames/index.html.erb within layouts/application
+  [1m[36mVideogame Load (0.6ms)[0m  [1m[34mSELECT "videogames".* FROM "videogames" WHERE "videogames"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/videogames/index.html.erb:95
+  Rendered videogames/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 145ms (Views: 134.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/vinyls" for 127.0.0.1 at 2019-03-10 22:02:15 -0500
+Processing by VinylsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:8
+  Rendering vinyls/index.html.erb within layouts/application
+  [1m[36mVinyl Load (0.4ms)[0m  [1m[34mSELECT "vinyls".* FROM "vinyls" WHERE "vinyls"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/vinyls/index.html.erb:94
+  Rendered vinyls/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 116ms (Views: 108.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/vinyls/1" for 127.0.0.1 at 2019-03-10 22:02:17 -0500
+Processing by VinylsController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 221ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `vinyl' for #<VinylsController:0x00007f8eed5a66c0>
+Did you mean?  vinyl_url):
+  
+app/controllers/vinyls_controller.rb:71:in `set_vinyl'
+Started GET "/vinyls/1" for 127.0.0.1 at 2019-03-10 22:04:21 -0500
+Processing by VinylsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVinyl Load (0.3ms)[0m  [1m[34mSELECT  "vinyls".* FROM "vinyls" WHERE "vinyls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:71
+  Rendering vinyls/show.html.erb within layouts/application
+  Rendered vinyls/show.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 40ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (The asset "vinyl.png" is not present in the asset pipeline.):
+     7:     <p id="notice"><strong><%= notice %></strong></p>
+     8:     <!-- Placeholder image here for future images grabbed
+     9:      from database for each specific image -->
+    10:     <%= image_tag ("vinyl.png"), :size=> "120x140"%>
+    11:     <p>
+    12:       <strong>Title:</strong>
+    13:       <%= @vinyl.title %>
+  
+app/views/vinyls/show.html.erb:10:in `_app_views_vinyls_show_html_erb__3362838758230873065_70125935655460'
+Started GET "/vinyls/1" for 127.0.0.1 at 2019-03-10 22:04:40 -0500
+Processing by VinylsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVinyl Load (0.5ms)[0m  [1m[34mSELECT  "vinyls".* FROM "vinyls" WHERE "vinyls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:71
+  Rendering vinyls/show.html.erb within layouts/application
+  Rendered vinyls/show.html.erb within layouts/application (13.1ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `publisher' for #<Vinyl:0x00007f8eed763b20>
+Did you mean?  public_send):
+    15: 
+    16:     <p>
+    17:       <strong>Publisher:</strong>
+    18:       <%= @vinyl.publisher %>
+    19:     </p>
+    20: 
+    21:     <p>
+  
+app/views/vinyls/show.html.erb:18:in `_app_views_vinyls_show_html_erb__3362838758230873065_70125923013520'
+Started GET "/vinyls/1" for 127.0.0.1 at 2019-03-10 22:05:34 -0500
+Processing by VinylsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVinyl Load (0.3ms)[0m  [1m[34mSELECT  "vinyls".* FROM "vinyls" WHERE "vinyls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:71
+  Rendering vinyls/show.html.erb within layouts/application
+  Rendered vinyls/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 111ms (Views: 106.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/vinyls" for 127.0.0.1 at 2019-03-10 22:05:36 -0500
+Processing by VinylsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:8
+  Rendering vinyls/index.html.erb within layouts/application
+  [1m[36mVinyl Load (0.4ms)[0m  [1m[34mSELECT "vinyls".* FROM "vinyls" WHERE "vinyls"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/vinyls/index.html.erb:94
+  Rendered vinyls/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 129ms (Views: 90.4ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/vinyls/1/edit" for 127.0.0.1 at 2019-03-10 22:05:38 -0500
+Processing by VinylsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVinyl Load (0.4ms)[0m  [1m[34mSELECT  "vinyls".* FROM "vinyls" WHERE "vinyls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:71
+  Rendering vinyls/edit.html.erb within layouts/application
+  Rendered vinyls/_form.html.erb (2.8ms)
+  Rendered vinyls/edit.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 127ms (Views: 119.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vinyls/1" for 127.0.0.1 at 2019-03-10 22:05:41 -0500
+Processing by VinylsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mVinyl Load (0.4ms)[0m  [1m[34mSELECT  "vinyls".* FROM "vinyls" WHERE "vinyls"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:71
+  Rendering vinyls/show.html.erb within layouts/application
+  Rendered vinyls/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 111ms (Views: 101.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vinyls/new" for 127.0.0.1 at 2019-03-10 22:05:43 -0500
+Processing by VinylsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:22
+  Rendering vinyls/new.html.erb within layouts/application
+  Rendered vinyls/_form.html.erb (2.8ms)
+  Rendered vinyls/new.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 121ms (Views: 112.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/vinyls" for 127.0.0.1 at 2019-03-10 22:05:45 -0500
+Processing by VinylsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NL3363vhRD77h2/+2yLDXyewcVZpLGMVzU2ny/QK185UZmcC3chZ/reiH7+wWyRRFJM5ny5K/dZSOZle5z97Rg==", "vinyl"=>{"title"=>"Hello Tomorrow", "artist"=>"", "year"=>"", "condition"=>"", "label"=>""}, "commit"=>"Create Vinyl"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:32
+Unpermitted parameters: :artist, :label
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/vinyls_controller.rb:32
+  [1m[36mVinyl Create (1.8ms)[0m  [1m[32mINSERT INTO "vinyls" ("title", "year", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Hello Tomorrow"], ["year", ""], ["created_at", "2019-03-11 03:05:45.618589"], ["updated_at", "2019-03-11 03:05:45.618589"], ["user_id", 5]]
+  ↳ app/controllers/vinyls_controller.rb:32
+  [1m[35m (16.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/vinyls_controller.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/vinyls_controller.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/vinyls_controller.rb:34
+Redirected to http://localhost:3000/vinyls/2
+Completed 302 Found in 37ms (ActiveRecord: 19.2ms)
+
+
+Started GET "/vinyls/2" for 127.0.0.1 at 2019-03-10 22:05:45 -0500
+Processing by VinylsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mVinyl Load (0.4ms)[0m  [1m[34mSELECT  "vinyls".* FROM "vinyls" WHERE "vinyls"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:71
+  Rendering vinyls/show.html.erb within layouts/application
+  Rendered vinyls/show.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 141ms (Views: 131.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/vinyls" for 127.0.0.1 at 2019-03-10 22:05:46 -0500
+Processing by VinylsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/vinyls_controller.rb:8
+  Rendering vinyls/index.html.erb within layouts/application
+  [1m[36mVinyl Load (0.5ms)[0m  [1m[34mSELECT "vinyls".* FROM "vinyls" WHERE "vinyls"."user_id" = ?[0m  [["user_id", 5]]
+  ↳ app/views/vinyls/index.html.erb:94
+  Rendered vinyls/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 105ms (Views: 96.0ms | ActiveRecord: 0.9ms)
+
+

@@ -1,15 +1,22 @@
-<%= form_with(model: vinyl, local: true) do |form| %>
-  <% if vinyl.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(vinyl.errors.count, "error") %> prohibited this vinyl from being saved:</h2>
+<!doctype html>
+<html lang="en">
+  <head>
+    <link href="https://getbootstrap.com/docs/4.2/examples/sign-in/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <div class= "container container--xs">
+      <%= form_with(model: Vinyl, local: true) do |form| %>
+        <% if @vinyl.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(vinyl.errors.count, "error") %> prohibited this vinyl from being saved:</h2>
 
-      <ul>
-      <% vinyl.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+            <ul>
+            <% vinyl.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
 
   <div class="field">
     <%= form.label :title %>
@@ -37,6 +44,10 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Create Vinyl", class:"btn btn-sm btn-primary btn-block form-signin"%>
   </div>
+
 <% end %>
+</div>
+</body>
+</html>

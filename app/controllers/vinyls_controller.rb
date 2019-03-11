@@ -4,7 +4,12 @@ class VinylsController < ApplicationController
   # GET /vinyls
   # GET /vinyls.json
   def index
-    @vinyls = Vinyl.all
+
+    if user_signed_in?
+        @vinyls = current_user.vinyls.all
+    else
+        redirect_to :root
+    end
   end
 
   # GET /vinyls/1
@@ -14,7 +19,7 @@ class VinylsController < ApplicationController
 
   # GET /vinyls/new
   def new
-    @vinyl = Vinyl.new
+    @vinyl = current_user.vinyls.new
   end
 
   # GET /vinyls/1/edit
@@ -24,8 +29,7 @@ class VinylsController < ApplicationController
   # POST /vinyls
   # POST /vinyls.json
   def create
-    @vinyl = Vinyl.new(vinyl_params)
-
+      @vinyl = current_user.vinyls.create(vinyl_params)
     respond_to do |format|
       if @vinyl.save
         format.html { redirect_to @vinyl, notice: 'Vinyl was successfully created.' }
@@ -56,7 +60,7 @@ class VinylsController < ApplicationController
   def destroy
     @vinyl.destroy
     respond_to do |format|
-      format.html { redirect_to vinyls_url, notice: 'Vinyl was successfully destroyed.' }
+      format.html { redirect_to vinyls_url, notice: 'vinyl was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +73,6 @@ class VinylsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vinyl_params
-      params.require(:vinyl).permit(:title, :artist, :year, :condition, :label)
+      params.require(:vinyl).permit(:title, :publisher, :platform, :year, :condition, :upc)
     end
 end
