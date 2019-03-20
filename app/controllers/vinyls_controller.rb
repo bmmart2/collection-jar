@@ -60,7 +60,7 @@ class VinylsController < ApplicationController
   def destroy
     @vinyl.destroy
     respond_to do |format|
-      format.html { redirect_to vinyls_url, notice: 'vinyl was successfully destroyed.' }
+      format.html { redirect_to vinyls_url, notice: 'Vinyl was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +73,6 @@ class VinylsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def vinyl_params
-      params.require(:vinyl).permit(:title, :publisher, :platform, :year, :condition, :upc)
+      params.require(:vinyl).permit(:title, :artist, :year, :condition, :label)
     end
 end

@@ -75,16 +75,16 @@
       </nav>
       <section class="jumbotron">
         <div class="container">
-          <p id='filter'>Filter your collection by title, publisher, platform, year, condition, or upc</p>
+          <p id='filter'>Filter your collection by title, artist, year, condition, or label</p>
           <center><input class="form-control" id="myInput" type="text" placeholder="Search..."></center><br>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
                 <th>Title</th>
                 <th>Artist</th>
-                <th>Label</th>
                 <th>Year</th>
                 <th>Condition</th>
+                <th>Label</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -95,9 +95,9 @@
               <tr>
                 <td><div class="col"><%= vinyl.title %></div></td>
                 <td><div class="col"><%= vinyl.artist %></div></td>
-                <td><div class="col"><%= vinyl.label %></div></td>
                 <td><div class="col"><%= vinyl.year %></div></td>
                 <td><div class="col"><%= vinyl.condition %></div></td>
+                <td><div class="col"><%= vinyl.label %></div></td>
                 <td><div class="col"><a class="btn btn-collection btn-sm"<%= link_to 'Show', vinyl %></a></div></td>
                 <td><div class="col"><a class="btn btn-edit btn-sm"<%= link_to 'Edit', edit_vinyl_path(vinyl) %></a></div></td>
                 <td><div class="col"><a class="btn btn-danger btn-sm"<%= link_to 'Delete', vinyl, method: :delete, data: { confirm: 'Are you sure that you want to delete this entry?' } %></a></div></td>

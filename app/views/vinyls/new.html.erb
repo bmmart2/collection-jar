@@ -1,9 +1,9 @@
-<!-- Render for the video game creation page -->
+<!-- Render for the vinyl creation page -->
 <body class="text-center">
   <div class= "container container--xs">
     <%= image_tag ("videogame2.png"), :size=> "120x140"%>
     <h1 class="h2 mt-2 font-weight-normal"><strong>New Vinyl</strong></h1>
-    <%= render 'form', videogame: @vinyl %>
+    <%= render 'form', vinyl: @vinyl %>
     <%= link_to 'Back', vinyls_path, data: { confirm: 'Are you sure? Unsaved changes may be lost!' } %>
   </div>
 </body>

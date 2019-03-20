@@ -14,13 +14,8 @@
     </p>
 
     <p>
-      <strong>Publisher:</strong>
+      <strong>Artist:</strong>
       <%= @vinyl.artist %>
-    </p>
-
-    <p>
-      <strong>Platform:</strong>
-      <%= @vinyl.label %>
     </p>
 
     <p>
@@ -33,6 +28,10 @@
       <%= @vinyl.condition %>
     </p>
 
+    <p>
+      <strong>Label:</strong>
+      <%= @vinyl.label %>
+    </p>
 
     <%= link_to 'Edit', edit_vinyl_path(@vinyl), data: { confirm: 'Are you sure that you want to change this entry?' } %> |
     <%= link_to 'Back', vinyls_path %>
