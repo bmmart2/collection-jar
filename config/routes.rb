@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :cards
   resources :vinyls
   resources :uploads do
     collection { post :import }
