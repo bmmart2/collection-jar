@@ -1,14 +1,25 @@
-<p id="notice"><%= notice %></p>
+<html lang="en">
+  <head>
+    <link href="https://getbootstrap.com/docs/4.2/examples/sign-in/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <div class= "container container--xs">
+    <p id="notice"><strong><%= notice %></strong></p>
+    <!-- Placeholder image here for future images grabbed
+     from database for each specific image -->
+    <%= image_tag ("videogame.png"), :size=> "120x140"%>
+    <p>
+      <strong>Title:</strong>
+      <%= @card.title %>
+    </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @card.title %>
-</p>
+    <p>
+      <strong>Content:</strong>
+      <%= @card.content %>
+    </p>
 
-<p>
-  <strong>Content:</strong>
-  <%= @card.content %>
-</p>
-
-<%= link_to 'Edit', edit_card_path(@card) %> |
-<%= link_to 'Back', cards_path %>
+    <%= link_to 'Edit', edit_card_path(@card), data: { confirm: 'Are you sure that you want to change this entry?' } %> |
+    <%= link_to 'Back', cards_path %>
+  </div>
+</body>
+</html>

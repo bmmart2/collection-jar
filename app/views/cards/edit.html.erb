@@ -1,6 +1,10 @@
-<h1>Editing Card</h1>
-
-<%= render 'form', card: @card %>
-
-<%= link_to 'Show', @card %> |
-<%= link_to 'Back', cards_path %>
+<!-- Render for the editing the card page -->
+<body class="text-center">
+  <div class= "container container--xs">
+    <%= image_tag ("videogame2.png"), :size=> "120x140"%>
+    <h1 class="h2 mt-2 font-weight-normal"><strong>Editing Card</strong></h1>
+    <%= render 'form', card: @card %>
+    <%= link_to 'Show', @card, data: { confirm: 'Are you sure? Unsaved changes may be lost!' }%> |
+    <%= link_to 'Back', cards_path, data: { confirm: 'Are you sure? Unsaved changes may be lost' } %>
+  </div>
+</body>

@@ -4,7 +4,12 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.json
   def index
-    @cards = Card.all
+
+    if user_signed_in?
+      @cards = current_user.cards.all
+    else
+      redirect_to :root
+    end
   end
 
   # GET /cards/1
@@ -14,7 +19,7 @@ class CardsController < ApplicationController
 
   # GET /cards/new
   def new
-    @card = Card.new
+    @card = current_user.cards.new
   end
 
   # GET /cards/1/edit
@@ -24,7 +29,7 @@ class CardsController < ApplicationController
   # POST /cards
   # POST /cards.json
   def create
-    @card = Card.new(card_params)
+    @card = current_user.cards.create(card_params)
 
     respond_to do |format|
       if @card.save
