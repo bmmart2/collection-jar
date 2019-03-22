@@ -18,7 +18,7 @@ class VideoGameApi
 
     def search_by_title(title)
         body = "search \"" + title + "\"; fields name, genres,
-            cover,aggregated_rating, aggregated_rating_count,
+            cover,aggregated_rating, platforms, aggregated_rating_count,
             category, involved_companies, release_dates;
             limit 10;"
         response = VideoGameApi.get("/games",
