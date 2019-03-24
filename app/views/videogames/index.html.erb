@@ -108,6 +108,18 @@
             </tbody>
           </table>
         </div>
+        <div class= "container container--xs text-center">
+          <p id='filter'>Upload your CSV file with your video game collection</p>
+          <%= form_tag import_videogames_path, multipart: true do %>
+            <!--original:<%= file_field_tag :file%>-->
+            <input type="file" name="file" id="file">
+            <%= submit_tag "Upload Video Games", class:"btn btn-collection"%>
+          <% end %>
+          <br>
+          <div class= "container container--xs">
+            <a class="btn btn-primary my-2"<%= link_to 'Create New Video Game', new_videogame_path %></a>
+          </div>
+        </div>
       </section>
       <!-- Script for filtering -->
       <script>
@@ -122,8 +134,5 @@
       </script>
     </body>
     <footer class="text-center">
-      <div class= "container container--xs">
-        <a class="btn btn-primary my-2"<%= link_to 'Create New Video Game', new_videogame_path %></a>
-      </div>
     </footer>
   </html>

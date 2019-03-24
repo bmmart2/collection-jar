@@ -4,12 +4,14 @@ Rails.application.routes.draw do
   resources :uploads do
     collection { post :import }
   end
+  resources :videogames do
+    collection { post :import }
+  end
   get 'pages/upload'
   get 'pages/terms'
   get 'pages/privacy'
   get 'pages/team'
   get 'pages/index'
-  resources :videogames
   get 'login/signin'
   root 'pages#index'
   devise_for :users

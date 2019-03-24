@@ -65,6 +65,11 @@ class VideogamesController < ApplicationController
     end
   end
 
+  def import
+    @videogame = current_user.videogames.import(params[:file])
+    redirect_to videogames_path, notice: "Uploads Added Successfully"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_videogame
