@@ -9,8 +9,8 @@ class VideoGameApi
     read_timeout 5
     attr_accessor :name
 
-    def initialize()
-
+    def initialize(name)
+        self.name = name
         @headers = { "user-key" => "4d1656208e292dfc41ac695355e2d6fb"}
 
 
