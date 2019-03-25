@@ -1,5 +1,5 @@
 #config/initializers/sendgrid.rb
 
-Sendgrid.smtp_username = ENV["sendgrid_smtp_username"]
-Sendgrid.smtp_password = ENV["sendgrid_smtp_username"]
-Sendgrid.smtp_port = ENV["sendgrid_smtp_port"]
+$smtp_username = ENV["sendgrid_smtp_username"]
+$smtp_password = ENV["sendgrid_smtp_username"]
+$smtp_port = ENV["sendgrid_smtp_port"]
