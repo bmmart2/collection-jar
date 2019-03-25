@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_03_20_073448) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_cards_on_user_id"
+    t.index [nil], name: "index_cards_on_user"
   end
 
   create_table "items", force: :cascade do |t|

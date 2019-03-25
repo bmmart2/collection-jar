@@ -8,7 +8,7 @@ class CreateVinyls < ActiveRecord::Migration[5.2]
       t.string :label
 
       t.timestamps
-      add_index :vinyls, :user
     end
+    add_index :vinyls, :user
   end
 end

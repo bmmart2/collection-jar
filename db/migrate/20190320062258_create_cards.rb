@@ -5,7 +5,8 @@ class CreateCards < ActiveRecord::Migration[5.2]
       t.text :content
 
       t.timestamps
-      add_index :cards, :user
+
     end
+    add_index :cards, :user
   end
 end
