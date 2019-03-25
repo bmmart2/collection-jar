@@ -68,3 +68,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "devise", "~> 4.5"
 gem "httparty"
 gem "discogs-wrapper"
+
+gem "figaro", "~> 1.1"
