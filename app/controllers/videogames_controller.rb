@@ -1,12 +1,13 @@
 class VideogamesController < ApplicationController
   before_action :set_videogame, only: [:show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction
   # GET /videogames
   # GET /videogames.json
   def index
 
     if user_signed_in?
-        @videogames = current_user.videogames.all
+      #Loads default sort case instead of .all
+      @videogames = current_user.videogames.order(sort_column + " " + sort_direction)
     else
         redirect_to :root
     end
