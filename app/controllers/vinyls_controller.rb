@@ -1,12 +1,13 @@
 class VinylsController < ApplicationController
   before_action :set_vinyl, only: [:show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction
   # GET /vinyls
   # GET /vinyls.json
   def index
 
     if user_signed_in?
-        @vinyls = current_user.vinyls.all
+        #Loads default sort case instead of .all
+        @vinyls = current_user.vinyls.order(sort_column + " " + sort_direction)
     else
         redirect_to :root
     end
@@ -74,5 +75,20 @@ class VinylsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def vinyl_params
       params.require(:vinyl).permit(:title, :artist, :year, :condition, :label)
+    end
+
+    #Spooky internet, only sort by specific columns
+    def sortable_columns
+        ["title", "artist", "year", "condition", "label"]
+    end
+
+    #Default sort and specified column check
+    def sort_column
+      sortable_columns.include?(params[:column]) ? params[:column] : "title"
+    end
+
+    #Default sort and specified direction check
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

@@ -80,12 +80,13 @@
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th>Title</th>
-                <th>Publisher</th>
-                <th>Platform</th>
-                <th>Year</th>
-                <th>Condition</th>
-                <th>Upc</th>
+                <!––Sorts via controller helper method ––>
+                <th><%= sortable "title", "Title" %></th>
+                <th><%= sortable "publisher", "Publisher"  %></th>
+                <th><%= sortable "platform", "Platform"  %></th>
+                <th><%= sortable "year", "Year"  %></th>
+                <th><%= sortable "condition", "Condition"  %></th>
+                <th><%= sortable "upc", "UPC"  %></th>
                 <th></th>
                 <th></th>
                 <th></th>

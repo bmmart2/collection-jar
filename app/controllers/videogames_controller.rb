@@ -1,12 +1,13 @@
 class VideogamesController < ApplicationController
   before_action :set_videogame, only: [:show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction
   # GET /videogames
   # GET /videogames.json
   def index
 
     if user_signed_in?
-        @videogames = current_user.videogames.all
+      #Loads default sort case instead of .all
+      @videogames = current_user.videogames.order(sort_column + " " + sort_direction)
     else
         redirect_to :root
     end
@@ -79,5 +80,20 @@ class VideogamesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def videogame_params
       params.require(:videogame).permit(:title, :publisher, :platform, :year, :condition, :upc)
+    end
+
+    #Spooky internet, only sort by specific columns
+    def sortable_columns
+        ["title", "publisher", "platform", "year", "condition", "upc"]
+    end
+
+    #Default sort and specified column check
+    def sort_column
+      sortable_columns.include?(params[:column]) ? params[:column] : "title"
+    end
+
+    #Default sort and specified direction check
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end
