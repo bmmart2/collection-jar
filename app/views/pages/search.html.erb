@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/pages/index">
+      <%= image_tag ("logo.png"), :size=> "55x65"%>
+    </a>
+    <a class="navbar-brand" href="/pages/index">Collection Jar</a>
+
+      <!-- Spacing -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      </div>
+
+      <!-- Search bar -->
+      <div id="tfheader">
+          <form id="tfnewsearch" method="get" action="http://mywebsite.com">
+                  <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+          </form>
+      <div class="tfclear"></div>
+      </div>
+
+
+      <!-- Additional Spacing -->
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+      </div>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item dropdown py-0 px-md-5">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <% if user_signed_in? %>
+                    Hello, <%= current_user.fname %>!
+              <% else %>
+                    Hello, User!
+              <% end %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <% if user_signed_in? %>
+                  <a class="dropdown-item" <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+
+              <% else %>
+                  <a class="dropdown-item" <%= link_to('Login', new_user_session_path)  %></a>
+                  <a class="dropdown-item" <%= link_to('Sign up', new_user_registration_path)  %></a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" <%= link_to('Forgot password?', new_user_password_path) %></a>
+
+              <% end %>
+
+            </div>
+          </li>
+        </ul>
+
+  </nav>
+<!-- Body -->
+<body>
+  <div class="container">
+    <div class="main-container center" id="main-contain">
+      <main role="main">
+        <div id="notices"></div>
+        <div class="content" id="content-page"><br>
+          <div class="sorting-area nopad">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="sorting-methods mar-md-top">
+                  <a class="label label-default label-primary" id="results-listBtn">
+                    <span class="fa fa-th-list active"></span>
+                  </a>
+                  <a class="label label-default" id="results-coverBtn">
+                    <span class="fa fa-th"></span>
+                  </a>
+                  <!-- need to implement this sorting later -->
+                  <a class="label label-primary"rel="nofollow">Sort by:</a>
+                  <a class="label label-default" href="/search?desc=1&amp;q=zelda&amp;sort=2&amp;type=1" rel="nofollow">Title </a> |
+                  <a class="label label-default" href="/search?desc=1&amp;q=zelda&amp;sort=3" rel="nofollow">Release Date</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+          <p class="mar-md-bottom text-muted">"#'s" results found for "game"</p>
+          <div class="block" data-sort="0" id="search-results">
+
+            <!-- start of the render for games -->
+        <% api = VideoGameApi.new() %>
+        <% results = api.search_by_title(params[:q]) %>
+        <% (0..9).each do |i| %>
+
+            <div class="game-result" title="" data-original-title="hover over for title">
+            <div class="media overflow relative">
+              <div class="media-left">
+                <a href="/games/<insert url>">
+                  <img src="https://via.placeholder.com/90x90" alt="<name for cover>"> <!-- Placeholder for now -->
+                </a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">
+                  <a href="/games/<insert game url>">
+                    <span><%= results[i]['name'] %></span>
+                  </a>
+                  <small class="game-shortdate text-muted">(<span><%= api.find_release_date(results[i]['release_dates'][0]) %></span>)</small>
+                </h4>
+              </div>
+            </div>
+            </div>
+        <% end %>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<!-- Footer -->
+  <footer class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md">
+        <small class="d-block mb-3 text-muted">&copy; 2019 Collection Jar</small>
+      </div>
+    </div>
+    <p class="float-left">
+      <a href="#">Back to top</a>
+    </p>
+  </footer>
+</html>

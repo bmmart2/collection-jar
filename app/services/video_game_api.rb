@@ -9,8 +9,7 @@ class VideoGameApi
     read_timeout 5
     attr_accessor :name
 
-    def initialize(name)
-        self.name = name
+    def initialize()
         @headers = { "user-key" => "4d1656208e292dfc41ac695355e2d6fb"}
 
 
@@ -25,6 +24,14 @@ class VideoGameApi
             :headers => self.headers,
             :body => body)
         return response.parsed_response
+    end
+
+    def find_release_date(dateID)
+        body = "fields y;"
+        response = VideoGameApi.get("/release_dates",
+            :headers => self.headers,
+            :body => body)
+        return response[0]['y'];
     end
 
 
