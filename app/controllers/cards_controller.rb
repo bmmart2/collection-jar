@@ -1,12 +1,13 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction
   # GET /cards
   # GET /cards.json
   def index
 
     if user_signed_in?
-      @cards = current_user.cards.all
+      #Loads default sort case instead of .all
+      @cards = current_user.cards.order(sort_column + " " + sort_direction)
     else
       redirect_to :root
     end
@@ -75,5 +76,20 @@ class CardsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def card_params
       params.require(:card).permit(:title, :content)
+    end
+
+    #Spooky internet, only sort by specific columns
+    def sortable_columns
+        ["title", "content"]
+    end
+
+    #Default sort and specified column check
+    def sort_column
+      sortable_columns.include?(params[:column]) ? params[:column] : "title"
+    end
+
+    #Default sort and specified direction check
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end

@@ -81,4 +81,19 @@ class VideogamesController < ApplicationController
     def videogame_params
       params.require(:videogame).permit(:title, :publisher, :platform, :year, :condition, :upc)
     end
+
+    #Spooky internet, only sort by specific columns
+    def sortable_columns
+        ["title", "publisher", "platform", "year", "condition", "upc"]
+    end
+
+    #Default sort and specified column check
+    def sort_column
+      sortable_columns.include?(params[:column]) ? params[:column] : "title"
+    end
+
+    #Default sort and specified direction check
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+    end
 end
