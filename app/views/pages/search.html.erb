@@ -14,12 +14,10 @@
       </div>
 
       <!-- Search bar -->
-      <div id="tfheader">
-          <form id="tfnewsearch" method="get" action="http://mywebsite.com">
-                  <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
-          </form>
-      <div class="tfclear"></div>
-      </div>
+      <form class="form-inline my-2 my-lg-0" id="newsearch" method="get" action="http://localhost:3000/pages/search">
+        <input class="form-control mr-sm-2" name='q' type="search" placeholder="Search Video Games, Movies, and more..." aria-label="Search" id="textinput">
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+      </form>
 
 
       <!-- Additional Spacing -->
@@ -79,7 +77,7 @@
             </div>
           </div>
           <br>
-          <p class="mar-md-bottom text-muted">Results found for "<%= params[:q].to_s %>"</p>
+          <p class="mar-md-bottom text-muted">Top results found for "<%= params[:q].to_s %>"</p>
           <div class="block" data-sort="0" id="search-results">
 
             <!-- start of the render for games -->

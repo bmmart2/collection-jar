@@ -35,7 +35,7 @@ class VideoGameApi
         if response[0] != nil
             return response[0]['y'];
         else
-            return "0";
+            return "N/A";
         end
     end
 
