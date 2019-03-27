@@ -30,21 +30,6 @@ Rails.application.configure do
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
 
-  #actionmailer config
-
-
-    ActionMailer::Base.smtp_settings = {
-    :user_name => $smtp_username,
-    :password => $smtp_password,
-    :domain => 'bmmart2.com',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
-}
-
-
-
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_caching = false
