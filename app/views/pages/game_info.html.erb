@@ -95,14 +95,23 @@
           <circle cx="55" cy="55" r="55" fill="#FFFFFF"></circle>
           <path stroke-linecap="round" stroke-width="6" stroke="#F3F3F3" fill="none" stroke-dasharray="251.2, 251.2" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
           <path class="gauge-progress" stroke-linecap="round" stroke-width="6" fill="none" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" style="stroke-dasharray: 190.912, 251.2; transition: stroke-dasharray 3s ease 0s;"></path>
-          <text x="55" y="50" text-anchor="middle" dy="7" fill="#2e51a2" font-size="30"><%=results[0]['aggregated_rating'].round%></text>
+          <text x="55" y="50" text-anchor="middle" dy="7" fill="#2e51a2" font-size="30">
+              <% if results[0]['aggregated_rating'] != nil %>
+                    <%='%.2f' % results[0]['aggregated_rating']%>
+             <% end %>
+          </text>
           <text class="gauge-description" x="55" y="67" text-anchor="middle" dy="7" font-size="12">Rating</text>
         </svg>
         <svg class="gauge filter-good gauge-twin" viewBox="0 0 110 110" width="105px" height="105px" style="width:105px;text-align:center;">
           <circle cx="55" cy="55" r="55" fill="#FFFFFF"></circle>
           <path stroke-linecap="round" stroke-width="7" stroke="#F3F3F3" fill="none" stroke-dasharray="251.2, 251.2" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
           <path class="gauge-progress" stroke-linecap="round" stroke-width="7" fill="none" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" style="stroke-dasharray: 192.651, 251.2; transition: stroke-dasharray 3s ease 0s;"></path>
-          <text x="55" y="50" text-anchor="middle" dy="7" fill="#2e51a2" font-size="30"><%=results[0]['aggregated_rating_count']%></text>
+          <text x="55" y="50" text-anchor="middle" dy="7" fill="#2e51a2" font-size="30">
+            <% if results[0]['aggregated_rating_count'] != nil %>
+                   <%=results[0]['aggregated_rating_count']%>
+
+            <%end%>
+          </text>
           <text class="gauge-description" x="55" y="67" text-anchor="middle" dy="7" font-size="12">Count</text>
         </svg>
       </div>
