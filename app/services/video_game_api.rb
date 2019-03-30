@@ -27,6 +27,16 @@ class VideoGameApi
         return response.parsed_response
     end
 
+    def get_by_id(id)
+        body = "fields *;
+            where id =" + id.to_s + ";
+            limit 1;"
+        response = VideoGameApi.get("/games",
+            :headers => self.headers,
+            :body => body)
+        return response.parsed_response
+    end
+
     def find_release_date(gameID)
         body = "fields y; where game =" + gameID.to_s + ";"
         response = VideoGameApi.get("/release_dates",
@@ -39,7 +49,7 @@ class VideoGameApi
         end
     end
 
-    def get_cover_link(cover, size)
+    def get_cover_id(cover)
         body = "fields image_id;
                 where id = " + cover.to_s + ";
                 limit 1;"
@@ -48,12 +58,14 @@ class VideoGameApi
             :body => body)
         imageID = response[0]['image_id']
         if imageID != nil
-            link = "https://images.igdb.com/igdb/image/upload/t_" + size.to_s + "/" + imageID.to_s + ".jpg"
+            return imageID
         else
-            link = "https://via.placeholder.com/90"
+            return
         end
-        return link
     end
 
-
+    def get_cover_link(coverID, size)
+        link = "https://images.igdb.com/igdb/image/upload/t_" + size.to_s + "/" + coverID.to_s + ".jpg"
+        return link;
+    end
 end
