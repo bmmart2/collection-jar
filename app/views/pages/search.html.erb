@@ -87,33 +87,32 @@
           <p class="mar-md-bottom text-muted">Top results found for "<%= params[:q].to_s %>"</p>
           <div class="block" data-sort="0" id="search-results">
             <!-- start of the render for games -->
-            <% api = VideoGameApi.new(api) %>
-            <% results = api.search_by_title(params[:q]) %>
-            <% (0..9).each do |i| %>
-                <% if results[i] != nil %>
-                    <div class="game-result">
-                    <div class="media overflow relative">
-                      <div class="media-left">
-                        <a href="/games/<insert url>">
-                          <img src=<%= api.get_cover_link(results[i]['cover'], "thumb") %> alt="<name for cover>"> <!-- Placeholder for now -->
-                        </a>
-                      </div>
-                      <div class="media-body">
-                        <h4 class="media-heading">
-                          <a href="/games/<insert game url>">
-                            <%= results[i]['name'] %>
-                          </a>
-                          <small class="game-shortdate text-muted">
-                            (<%= if results[i]['id'] != nil
-                            api.find_release_date(results[i]['id'])
-                            end %>)
-                          </small>
-                        </h4>
-                      </div>
-                    </div>
-                    <br>
-                    </div>
-                <% end %>
+        <% api = VideoGameApi.new(api) %>
+        <% results = api.search_by_title(params[:q]) %>
+        <% (0..9).each do |i| %>
+                <% if results[i]['id'] != nil
+                    date = api.find_release_date(results[i]['id'])
+                    cover = api.get_cover_id(results[i]['cover'])
+                end %>
+            <% if results[i] != nil %>
+                <div class="game-result" title="<%=results[i]['name']%>" data-original-title="hover over for title">
+                <div class="media overflow relative">
+                  <div class="media-left">
+                    <a href="/games/<insert url>">
+                      <img src=<%= api.get_cover_link(cover, "thumb") %> alt="<name for cover>"> <!-- Placeholder for now -->
+                    </a>
+                  </div>
+                  <div class="media-body">
+                    <h4 class="media-heading">
+                      <a href="/pages/game_info?id=<%=results[i]['id']%>&date=<%=date%>&cover=<%=cover%>">
+                        <span><%= results[i]['name'] %></span>
+                      </a>
+                      <small class="game-shortdate text-muted">(<span><%=date%></span>)
+                     </small>
+                    </h4>
+                  </div>
+                </div>
+                </div>
             <% end %>
             </div>
           </div>
