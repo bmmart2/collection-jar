@@ -95,7 +95,7 @@
           <circle cx="55" cy="55" r="55" fill="#FFFFFF"></circle>
           <path stroke-linecap="round" stroke-width="6" stroke="#F3F3F3" fill="none" stroke-dasharray="251.2, 251.2" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
           <path class="gauge-progress" stroke-linecap="round" stroke-width="6" fill="none" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" style="stroke-dasharray: 190.912, 251.2; transition: stroke-dasharray 3s ease 0s;"></path>
-          <text x="55" y="50" text-anchor="middle" dy="7" fill="#2e51a2" font-size="30"><%=results[0]['aggregated_rating']%></text>
+          <text x="55" y="50" text-anchor="middle" dy="7" fill="#2e51a2" font-size="30"><%=results[0]['aggregated_rating'].round%></text>
           <text class="gauge-description" x="55" y="67" text-anchor="middle" dy="7" font-size="12">Rating</text>
         </svg>
         <svg class="gauge filter-good gauge-twin" viewBox="0 0 110 110" width="105px" height="105px" style="width:105px;text-align:center;">
@@ -120,15 +120,22 @@
            <h3>About<h3>
            <div class="about-section">
              <p>
-               <span class="text-semibold">Genre:</span>
+               <span class="text-semibold">Genres:</span>
                <!-- can probably surround this with an if with conditions if more than 1 genre or javascript -->
-               <a href="/genres/<insert>">Placeholder Genre #1</a>,
-               <a href="/genres/<insert>">Placeholder Genre #2</a>
+               <a href="/genres/<insert>"><%=api.get_genre(results[0]['genres'][0])%></a>
+                <% if results[0]['genres'][1] != nil %>
+                    ,<a href="/genres/<insert>"><%=api.get_genre(results[0]['genres'][1])%></a>
+                <%end%>
              </p>
              <p>
              <span class="text-semibold">Platforms:</span>
-             <a href="/platforms/<insert>">Placeholder Platform #1</a>,
-             <a href="/platforms/<insert>">Placeholder Platform #2</a>
+             <a href="/platforms/<insert>"><%=api.get_platform(results[0]['platforms'][0])%></a>
+            <% if results[0]['platforms'][1] != nil %>
+                <a href="/platforms/<insert>">, <%=api.get_platform(results[0]['platforms'][1])%></a>
+            <%end%>
+            <% if results[0]['platforms'][2] != nil %>
+                  <a href="/platforms/<insert>">, <%=api.get_platform(results[0]['platforms'][2])%></a>
+            <%end%>
              </p>
              <div class="description">
                <%=results[0]['summary']%>

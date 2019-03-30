@@ -37,8 +37,32 @@ class VideoGameApi
         return response.parsed_response
     end
 
+    def get_genre(genreID)
+        body = "fields *; where id =" + genreID.to_s + "; limit 1;"
+        response = VideoGameApi.get("/genres",
+            :headers => self.headers,
+            :body => body)
+        if response[0] != nil
+            return response[0]['name'];
+        else
+            return "";
+        end
+    end
+
+    def get_platform(platformID)
+        body = "fields *; where id =" + platformID.to_s + "; limit 1;"
+        response = VideoGameApi.get("/platforms",
+            :headers => self.headers,
+            :body => body)
+        if response[0] != nil
+            return response[0]['name'];
+        else
+            return "";
+        end
+    end
+
     def find_release_date(gameID)
-        body = "fields y; where game =" + gameID.to_s + ";"
+        body = "fields y; where id=" + gameID.to_s + ";"
         response = VideoGameApi.get("/release_dates",
             :headers => self.headers,
             :body => body)

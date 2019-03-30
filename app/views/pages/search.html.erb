@@ -92,8 +92,8 @@
         <% (0..9).each do |i| %>
                 <% if results[i]['id'] != nil
                     date = api.find_release_date(results[i]['id'])
-                    cover = api.get_cover_id(results[i]['cover'])
-                end %>
+                    cover = api.get_cover_id(results[i]['cover']) %>
+                <% end %>
             <% if results[i] != nil %>
                 <div class="game-result" title="<%=results[i]['name']%>" data-original-title="hover over for title">
                 <div class="media overflow relative">
@@ -113,6 +113,7 @@
                   </div>
                 </div>
                 </div>
+            <% end %>
             <% end %>
             </div>
           </div>
