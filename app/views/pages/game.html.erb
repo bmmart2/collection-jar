@@ -15,8 +15,8 @@
       </div>
 
       <!-- Search bar -->
-      <form class="form-inline my-2 my-lg-0" id="newsearch" method="get" action="http://localhost:3000/pages/search">
-        <input class="form-control mr-sm-2" name='q' type="search" placeholder="Search Video Games, Movies, and more..." aria-label="Search" id="textinput">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search..." aria-label="Search">
         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
       </form>
 
@@ -82,12 +82,10 @@
   <head>
 <!-- Body -->
 <body>
-    <% api = VideoGameApi.new("page") %>
-    <% results = api.get_by_id(params[:id]) %>
   <div class="container">
     <div class="gamepage-cover">
       <!-- src is going to be replacement for cover image -->
-      <img class="img-responsive cover_big" alt="" src="<%=api.get_cover_link(params[:cover],"cover_big")%>" style="height: 328px;">
+      <img class="img-responsive cover_big" alt="" src="https://via.placeholder.com/264x328" style="height: 328px;">
       <br><br> <!-- line breaks -->
       <div class="btn btn-primary btn-block mar-lg-bottom">Add to List</div>
       <div class="gamepage-gauge">
@@ -95,48 +93,47 @@
           <circle cx="55" cy="55" r="55" fill="#FFFFFF"></circle>
           <path stroke-linecap="round" stroke-width="6" stroke="#F3F3F3" fill="none" stroke-dasharray="251.2, 251.2" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
           <path class="gauge-progress" stroke-linecap="round" stroke-width="6" fill="none" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" style="stroke-dasharray: 190.912, 251.2; transition: stroke-dasharray 3s ease 0s;"></path>
-          <text x="55" y="50" text-anchor="middle" dy="7" fill="#2e51a2" font-size="30"><%=results[0]['aggregated_rating']%></text>
+          <text x="55" y="50" text-anchor="middle" dy="7" fill="#2e51a2" font-size="30">"rate"</text>
           <text class="gauge-description" x="55" y="67" text-anchor="middle" dy="7" font-size="12">Rating</text>
         </svg>
         <svg class="gauge filter-good gauge-twin" viewBox="0 0 110 110" width="105px" height="105px" style="width:105px;text-align:center;">
           <circle cx="55" cy="55" r="55" fill="#FFFFFF"></circle>
           <path stroke-linecap="round" stroke-width="7" stroke="#F3F3F3" fill="none" stroke-dasharray="251.2, 251.2" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
           <path class="gauge-progress" stroke-linecap="round" stroke-width="7" fill="none" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" style="stroke-dasharray: 192.651, 251.2; transition: stroke-dasharray 3s ease 0s;"></path>
-          <text x="55" y="50" text-anchor="middle" dy="7" fill="#2e51a2" font-size="30"><%=results[0]['aggregated_rating_count']%></text>
+          <text x="55" y="50" text-anchor="middle" dy="7" fill="#2e51a2" font-size="30">#</text>
           <text class="gauge-description" x="55" y="67" text-anchor="middle" dy="7" font-size="12">Count</text>
         </svg>
       </div>
     </div>
-       <div class="gamepage-summary">
-
-         <div class="gamepage-title-container" style="height:333.8px;">
-           <div class="gamepage-title-wrapper"><br>
-             <h1 class="banner-title"><%=results[0]['name']%></h1>
-             <h2 class="banner-subheading"><small><%=params[:date]%><small></h2>
-             <a href="/publisher/<insert>"><!--this is for referencing to that game publisher page if we decide to make one -->
-               <h3 class="banner-subsubheading"><i><small></small></i></h3>
-             </a>
-           </div>
-           <h3>About<h3>
-           <div class="about-section">
-             <p>
-               <span class="text-semibold">Genre:</span>
-               <!-- can probably surround this with an if with conditions if more than 1 genre or javascript -->
-               <a href="/genres/<insert>">Placeholder Genre #1</a>,
-               <a href="/genres/<insert>">Placeholder Genre #2</a>
-             </p>
-             <p>
-             <span class="text-semibold">Platforms:</span>
-             <a href="/platforms/<insert>">Placeholder Platform #1</a>,
-             <a href="/platforms/<insert>">Placeholder Platform #2</a>
-             </p>
-             <div class="description">
-               <%=results[0]['summary']%>
-             </div>
-             <br>
-           </div>
-         </div>
-       </div>
-     </div>
-   </body>
-   </html>
+    <div class="gamepage-summary">
+      <div class="gamepage-title-container" style="height:333.8px;">
+        <div class="gamepage-title-wrapper"><br>
+          <h1 class="banner-title">Placeholder Game Title</h1>
+          <h2 class="banner-subheading"><small>Placeholder Year<small></h2>
+          <a href="/publisher/<insert>"><!--this is for referencing to that game publisher page if we decide to make one -->
+            <h3 class="banner-subsubheading"><i><small>Placeholder Game Publisher</small></i></h3>
+          </a>
+        </div>
+        <h3>About<h3>
+        <div class="about-section">
+          <p>
+            <span class="text-semibold">Genre:</span>
+            <!-- can probably surround this with an if with conditions if more than 1 genre or javascript -->
+            <a href="/genres/<insert>">Placeholder Genre #1</a>,
+            <a href="/genres/<insert>">Placeholder Genre #2</a>
+          </p>
+          <p>
+          <span class="text-semibold">Platforms:</span>
+          <a href="/platforms/<insert>">Placeholder Platform #1</a>,
+          <a href="/platforms/<insert>">Placeholder Platform #2</a>
+          </p>
+          <div class="description">
+            Placeholder description.....
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

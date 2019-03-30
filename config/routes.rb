@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get 'pages/index'
   get 'login/signin'
   get 'pages/search'
-  get 'pages/game_info'
+  get 'pages/game'
   root 'pages#index'
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
