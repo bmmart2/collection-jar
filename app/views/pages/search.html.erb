@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <!-- Header -->
+  <head>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="/pages/index">
       <%= image_tag ("logo.png"), :size=> "55x65"%>
@@ -51,6 +52,12 @@
         </ul>
 
   </nav>
+  <style>
+    .media-left {
+      margin-right: 10px;
+    }
+  </style>
+  </head>
 <!-- Body -->
 <body>
   <div class="container">
@@ -79,7 +86,6 @@
           <br>
           <p class="mar-md-bottom text-muted">Top results found for "<%= params[:q].to_s %>"</p>
           <div class="block" data-sort="0" id="search-results">
-
             <!-- start of the render for games -->
         <% api = VideoGameApi.new(api) %>
         <% results = api.search_by_title(params[:q]) %>
@@ -108,14 +114,11 @@
                 </div>
                 </div>
             <% end %>
-        <% end %>
-
-
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</body>
+    </body>
 <!-- Footer -->
   <footer class="container py-5">
     <div class="row">
