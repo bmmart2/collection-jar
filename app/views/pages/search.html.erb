@@ -89,7 +89,7 @@
             <!-- start of the render for games -->
         <% api = VideoGameApi.new(api) %>
         <% results = api.search_by_title(params[:q]) %>
-        <% (0..9).each do |i| %>
+        <% (0..3).each do |i| %>
                 <% if results[i]['id'] != nil
                     date = api.find_release_date(results[i]['id'])
                     cover = api.get_cover_id(results[i]['cover']) %>

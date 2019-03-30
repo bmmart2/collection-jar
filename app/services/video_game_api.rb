@@ -62,7 +62,7 @@ class VideoGameApi
     end
 
     def find_release_date(gameID)
-        body = "fields y; where id=" + gameID.to_s + ";"
+        body = "fields y; where game=" + gameID.to_s + ";"
         response = VideoGameApi.get("/release_dates",
             :headers => self.headers,
             :body => body)
