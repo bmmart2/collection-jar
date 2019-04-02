@@ -4,5 +4,5 @@ class List < ApplicationRecord
 
   # This allows ListItems to be created at the same time as the List,
   # but will only create it if the :item_id attribute is present
-  accepts_nested_attributes_for :list_items, reject_if: proc { |attr| attr[:item_id].blank? }
+  accepts_nested_attributes_for :list_items, reject_if: proc { |attr| attr[:videogame].blank? }
 end
