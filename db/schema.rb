@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_20_073448) do
+ActiveRecord::Schema.define(version: 2019_04_02_144745) do
 
   create_table "cards", force: :cascade do |t|
     t.string "title"
@@ -24,6 +24,14 @@ ActiveRecord::Schema.define(version: 2019_03_20_073448) do
 
   create_table "items", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string "name"
+    t.string "itype"
+    t.string "other"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -83,6 +91,14 @@ ActiveRecord::Schema.define(version: 2019_03_20_073448) do
     t.integer "user_id"
     t.index ["user_id"], name: "index_vinyls_on_user_id"
     t.index [nil], name: "index_vinyls_on_user"
+  end
+
+  create_table "wishlists", force: :cascade do |t|
+    t.string "name"
+    t.string "item_type"
+    t.string "other"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
