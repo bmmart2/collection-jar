@@ -5,7 +5,11 @@ class ListsController < ApplicationController
   # GET /lists.json
   def index
     @lists = List.all
-    @videogames = current_user.videogames.all
+    if user_signed_in?
+      @videogames = current_user.videogames.all
+    else
+      redirect_to :root
+    end
   end
 
   # GET /lists/1
@@ -15,8 +19,12 @@ class ListsController < ApplicationController
 
   # GET /lists/new
   def new
+    if user_signed_in?
+      @videogames = current_user.videogames.all
+    else
+      redirect_to :root
+    end
     @list = List.new
-    @videogames = current_user.videogames.all
   end
 
   # GET /lists/1/edit

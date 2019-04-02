@@ -3,7 +3,7 @@
   <% @videogames.each_with_index do |item, i| %>
     <%= f.fields_for :list_items, ListItem.new, child_index: i do |list_item_form| %>
       <p>
-        <%= list_item_form.check_box :item_id, {}, item.id, "" %> <%= item.name %>
+        <%= list_item_form.check_box :videogame, {}, item.id, "" %> <%= item.title %>
       </p>
     <% end %>
   <% end %>
