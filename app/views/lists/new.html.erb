@@ -1,4 +1,4 @@
-<h1>New List</h1>
+<h1>New Videogame List</h1>
 <%= form_for @list do |f| %>
   <% @videogames.each_with_index do |item, i| %>
     <%= f.fields_for :list_items, ListItem.new, child_index: i do |list_item_form| %>

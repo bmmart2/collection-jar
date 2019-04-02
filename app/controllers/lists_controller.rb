@@ -15,15 +15,12 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
+    @videogames = current_user.videogames.all
   end
 
   # GET /lists/new
   def new
-    if user_signed_in?
-      @videogames = current_user.videogames.all
-    else
-      redirect_to :root
-    end
+    @videogames = current_user.videogames.all
     @list = List.new
   end
 
@@ -79,6 +76,6 @@ class ListsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def list_params
-      params.require(:list).permit(:name, list_items_attributes: [:videogame_id])
+      params.require(:list).permit(list_items_attributes: [:videogame_id])
     end
 end
