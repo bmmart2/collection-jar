@@ -12,21 +12,21 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.label :name, class:"form-control form-signin" %>
+    <%= form.text_field :name, class:"form-control form-signin" %>
   </div>
 
   <div class="field">
-    <%= form.label :item_type %>
-    <%= form.text_field :item_type %>
+    <%= form.label :item_type, class:"form-control form-signin" %>
+    <%= form.text_field :item_type, class:"form-control form-signin" %>
   </div>
 
   <div class="field">
-    <%= form.label :other %>
-    <%= form.text_field :other %>
+    <%= form.label :other, class:"form-control form-signin" %>
+    <%= form.text_field :other, class:"form-control form-signin" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Create Wishlist Item", class:"btn btn-sm btn-primary btn-block form-signin"%>
   </div>
 <% end %>

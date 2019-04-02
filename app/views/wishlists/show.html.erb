@@ -1,19 +1,30 @@
-<p id="notice"><%= notice %></p>
+<html lang="en">
+  <head>
+    <link href="https://getbootstrap.com/docs/4.2/examples/sign-in/signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center">
+    <div class= "container container--xs">
+    <p id="notice"><strong><%= notice %></strong></p>
+    <!-- Placeholder image here for future images grabbed
+     from database for each specific image -->
+    <%= image_tag ("videogame.png"), :size=> "120x140"%>
+    <p>
+      <strong>Name:</strong>
+      <%= @wishlist.name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @wishlist.name %>
-</p>
+    <p>
+      <strong>Item Type:</strong>
+      <%= @wishlist.item_type %>
+    </p>
 
-<p>
-  <strong>Item type:</strong>
-  <%= @wishlist.item_type %>
-</p>
+    <p>
+      <strong>Notes:</strong>
+      <%= @wishlist.other %>
+    </p>
 
-<p>
-  <strong>Other:</strong>
-  <%= @wishlist.other %>
-</p>
-
-<%= link_to 'Edit', edit_wishlist_path(@wishlist) %> |
-<%= link_to 'Back', wishlists_path %>
+    <%= link_to 'Edit', edit_wishlist_path(@wishlist), data: { confirm: 'Are you sure that you want to change this entry?' } %> |
+    <%= link_to 'Back', wishlists_path %>
+  </div>
+</body>
+</html>
