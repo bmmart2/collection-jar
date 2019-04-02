@@ -1,6 +1,6 @@
 <body class="text-center">
   <div class= "container container--xs">
-    <%= image_tag ("videogame2.png"), :size=> "120x140"%>
+    <%= image_tag ("logo.png"), :size=> "120x140"%>
     <h1 class="h2 mt-2 font-weight-normal"><strong>Editing Wishlist Item</strong></h1>
     <%= render 'form', wishlist: @wishlist %>
     <%= link_to 'Show', @wishlist, data: { confirm: 'Are you sure? Unsaved changes may be lost!' }%> |
