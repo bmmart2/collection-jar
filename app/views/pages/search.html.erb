@@ -98,7 +98,7 @@
                 <div class="game-result" title="<%=results[i]['name']%>" data-original-title="hover over for title">
                 <div class="media overflow relative">
                   <div class="media-left">
-                    <a href="/games/<insert url>">
+                    <a href="/pages/game_info?id=<%=results[i]['id']%>&date=<%=date%>&cover=<%=cover%>">
                       <img src=<%= api.get_cover_link(cover, "thumb") %> alt="<name for cover>"> <!-- Placeholder for now -->
                     </a>
                   </div>
