@@ -88,6 +88,7 @@
     <% api = VideoGameApi.new("page") %>
     <% results = api.get_by_id(params[:id]) %>
     <% genre = api.get_genre(results[0]['genres'][0]) %>
+    <% publisher = api.find_involved_company(params[:id]) %>
   <div class="container">
     <div class="gamepage-cover">
       <!-- src is going to be replacement for cover image -->
@@ -143,9 +144,7 @@
            <div class="gamepage-title-wrapper"><br>
              <h1 class="banner-title"><%=results[0]['name']%></h1>
              <h2 class="banner-subheading"><small><%=params[:date]%><small></h2>
-             <a href="/publisher/<insert>"><!--this is for referencing to that game publisher page if we decide to make one -->
-               <h3 class="banner-subsubheading"><i><small></small></i></h3>
-             </a>
+             <h3 class="banner-subsubheading"><i><small><%=publisher%></small></i></h3>
            </div>
            <h3>About<h3>
            <div class="about-section">
