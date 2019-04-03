@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :name, class:"form-control form-signin" %>
-    <%= form.text_field :name, class:"form-control form-signin" %>
+    <%= form.text_field :name, class:"form-control form-signin", value: params[:title] %>
   </div>
 
   <div class="field">
     <%= form.label :item_type, class:"form-control form-signin" %>
-    <%= form.text_field :item_type, class:"form-control form-signin" %>
+    <%= form.text_field :item_type, class:"form-control form-signin", value: params[:type] %>
   </div>
 
   <div class="field">
