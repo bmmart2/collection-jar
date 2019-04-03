@@ -75,7 +75,7 @@
       </nav>
       <section class="jumbotron">
         <div class="container">
-          <p id='filter'>Filter your collection by title, publisher, platform, year, condition, or upc</p>
+          <p id='filter'>Filter your collection by title, publisher, platform, year, condition, or genre</p>
           <center><input class="form-control" id="myInput" type="text" placeholder="Search..."></center><br>
           <table class="table table-bordered table-striped">
             <thead>
@@ -85,7 +85,7 @@
                 <th>Platform</th>
                 <th>Year</th>
                 <th>Condition</th>
-                <th>Upc</th>
+                <th>genre</th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -99,7 +99,7 @@
                   <td><div class="col"><%= upload.platform %></div></td>
                   <td><div class="col"><%= upload.year %></div></td>
                   <td><div class="col"><%= upload.condition %></div></td>
-                  <td><div class="col"><%= upload.upc %></div></td>
+                  <td><div class="col"><%= upload.genre %></div></td>
                   <td><div class="col"><a class="btn btn-collection btn-sm"<%= link_to 'Show', upload %></a></div></td>
                   <td><div class="col"><a class="btn btn-edit btn-sm"<%= link_to 'Edit', edit_upload_path(upload) %></a></div></td>
                   <td><div class="col"><a class="btn btn-danger btn-sm"<%= link_to 'Delete', upload, method: :delete, data: { confirm: 'Are you sure that you want to delete this entry?' } %></a></div></td>

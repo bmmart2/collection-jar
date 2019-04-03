@@ -79,12 +79,12 @@ class VideogamesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def videogame_params
-      params.require(:videogame).permit(:title, :publisher, :platform, :year, :condition, :upc)
+      params.require(:videogame).permit(:title, :publisher, :platform, :year, :condition, :genre)
     end
 
     #Spooky internet, only sort by specific columns
     def sortable_columns
-        ["title", "publisher", "platform", "year", "condition", "upc"]
+        ["title", "publisher", "platform", "year", "condition", "genre"]
     end
 
     #Default sort and specified column check

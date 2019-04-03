@@ -20,12 +20,17 @@
 
         <div class="field">
           <%= form.label :title%>
-          <%= form.text_field :title, class:"form-control form-signin" %>
+          <%= form.text_field :title, class:"form-control form-signin", value: params[:title] %>
         </div>
 
         <div class="field">
           <%= form.label :publisher %>
           <%= form.text_field :publisher, class:"form-control form-signin" %>
+        </div>
+
+        <div class="field">
+          <%= form.label :genre %>
+          <%= form.text_field :genre, class:"form-control form-signin", value: params[:genre] %>
         </div>
 
         <div class="field">
@@ -35,7 +40,7 @@
 
         <div class="field">
           <%= form.label :year %>
-          <%= form.number_field :year, class:"form-control form-signin" %>
+          <%= form.number_field :year, class:"form-control form-signin", value: params[:date] %>
         </div>
 
         <div class="field">
@@ -43,10 +48,6 @@
           <%= form.number_field :condition, class:"form-control form-signin" %>
         </div>
 
-        <div class="field">
-          <%= form.label :Upc %>
-          <%= form.text_field :upc, class:"form-control form-signin" %>
-        </div>
 
         <br>
 

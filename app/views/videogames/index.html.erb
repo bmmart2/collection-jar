@@ -80,7 +80,7 @@
       </nav>
       <section class="jumbotron">
         <div class="container">
-          <p id='filter'>Filter your collection by title, publisher, platform, year, condition, or upc</p>
+          <p id='filter'>Filter your collection by title, publisher, genre, platform, year, or condition </p>
           <center><input class="form-control" id="myInput" type="text" placeholder="Search..."></center><br>
           <table class="table table-bordered table-striped">
             <thead>
@@ -88,10 +88,10 @@
                 <!––Sorts via controller helper method ––>
                 <th><%= sortable "title", "Title" %></th>
                 <th><%= sortable "publisher", "Publisher"  %></th>
+                <th><%= sortable "genre", "Genre"  %></th>
                 <th><%= sortable "platform", "Platform"  %></th>
                 <th><%= sortable "year", "Year"  %></th>
                 <th><%= sortable "condition", "Condition"  %></th>
-                <th><%= sortable "upc", "UPC"  %></th>
                 <th></th>
                 <th></th>
                 <th></th>
@@ -102,10 +102,10 @@
               <tr>
                 <td><div class="col"><%= videogame.title %></div></td>
                 <td><div class="col"><%= videogame.publisher %></div></td>
+                <td><div class="col"><%= videogame.genre %></div></td>
                 <td><div class="col"><%= videogame.platform %></div></td>
                 <td><div class="col"><%= videogame.year %></div></td>
                 <td><div class="col"><%= videogame.condition %></div></td>
-                <td><div class="col"><%= videogame.upc %></div></td>
                 <td><div class="col"><a class="btn btn-collection btn-sm"<%= link_to 'Show', videogame %></a></div></td>
                 <td><div class="col"><a class="btn btn-edit btn-sm"<%= link_to 'Edit', edit_videogame_path(videogame) %></a></div></td>
                 <td><div class="col"><a class="btn btn-danger btn-sm"<%= link_to 'Delete', videogame, method: :delete, data: { confirm: 'Are you sure that you want to delete this entry?' } %></a></div></td>

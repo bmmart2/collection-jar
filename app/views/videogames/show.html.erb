@@ -19,6 +19,11 @@
     </p>
 
     <p>
+      <strong>Genre:</strong>
+      <%= @videogame.genre %>
+    </p>
+
+    <p>
       <strong>Platform:</strong>
       <%= @videogame.platform %>
     </p>
@@ -33,10 +38,6 @@
       <%= @videogame.condition %>
     </p>
 
-    <p>
-      <strong>Upc:</strong>
-      <%= @videogame.upc %>
-    </p>
 
     <%= link_to 'Edit', edit_videogame_path(@videogame), data: { confirm: 'Are you sure that you want to change this entry?' } %> |
     <%= link_to 'Back', videogames_path %>
