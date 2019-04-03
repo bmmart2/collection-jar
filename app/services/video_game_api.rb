@@ -61,6 +61,18 @@ class VideoGameApi
         end
     end
 
+    def find_involved_company(gameID)
+      body = "fields company.name; where game=" + gameID.to_s + "; limit 1;"
+      response = VideoGameApi.get("/involved_companies",
+          :headers => self.headers,
+          :body => body)
+      if response[0] != nil
+          return response[0]['company']['name'];
+      else
+          return "";
+      end
+    end
+
     def find_release_date(gameID)
         body = "fields y; where game=" + gameID.to_s + ";"
         response = VideoGameApi.get("/release_dates",
