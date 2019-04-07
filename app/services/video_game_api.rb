@@ -74,15 +74,15 @@ class VideoGameApi
     end
 
     def find_release_date(gameID)
-        body = "fields y; where game=" + gameID.to_s + ";"
-        response = VideoGameApi.get("/release_dates",
-            :headers => self.headers,
-            :body => body)
-        if response[0] != nil
-            return response[0]['y'];
-        else
-            return "N/A";
-        end
+      body = "fields y; where game=" + gameID.to_s + ";"
+      response = VideoGameApi.get("/release_dates",
+          :headers => self.headers,
+          :body => body)
+      if response[0] != nil
+          return response[0]['y'];
+      else
+          return "N/A";
+      end
     end
 
     def get_cover_id(cover)
