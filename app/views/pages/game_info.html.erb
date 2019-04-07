@@ -87,7 +87,9 @@
 <body>
     <% api = VideoGameApi.new("page") %>
     <% results = api.get_by_id(params[:id]) %>
-    <% genre = api.get_genre(results[0]['genres'][0]) %>
+    <%if (results[0]['genres'] != nil) %>
+        <% genre = api.get_genre(results[0]['genres'][0]) %>
+    <%end%>
     <% publisher = api.find_involved_company(params[:id]) %>
   <div class="container">
     <div class="gamepage-cover">
@@ -160,10 +162,14 @@
            <div class="about-section">
              <p>
                <span class="text-semibold">Genres:</span>
-                <%=genre%>
-                <% if results[0]['genres'][1] != nil %>
-                  , <%=api.get_genre(results[0]['genres'][1])%>
-                <% end %>
+            <% if results[0]['genres'] != nil %>
+                     <%=genre%>
+                     <% if results[0]['genres'][1] != nil %>
+                  ,     <%=api.get_genre(results[0]['genres'][1])%>
+                     <% end %>
+               <% else %>
+                    N/A
+            <% end %>
              </p>
              <p>
              <span class="text-semibold">Platforms:</span>
