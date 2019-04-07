@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :confirmable
 
   has_many :videogames, dependent: :destroy
+  has_many :movies, dependent: :destroy
   has_many :vinyls, dependent: :destroy
   has_many :cards, dependent: :destroy
   has_many :wishlist, dependent: :destroy
