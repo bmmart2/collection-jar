@@ -100,7 +100,11 @@
   <div class="container">
     <div class="gamepage-cover">
       <!-- src is going to be replacement for cover image -->
+      <% if cover != "N/A" %>
       <img class="img-responsive cover_big" alt="" src="<%=cover%>" style="max-width: 100%;">
+      <% else %>
+        <%= image_tag ("no_image_big.jpg")%>
+      <% end %>
       <br><br> <!-- line breaks -->
       <% if user_signed_in? %>
       <div class="btn btn-primary btn-block mar-lg-bottom" onclick=" relocate_new_movies()">Add to Collection</div>
