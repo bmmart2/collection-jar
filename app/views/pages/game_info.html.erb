@@ -91,10 +91,15 @@
         <% genre = api.get_genre(results[0]['genres'][0]) %>
     <%end%>
     <% publisher = api.find_involved_company(params[:id]) %>
+    <% cover = api.get_cover_id(results[0]['cover']) %>
   <div class="container">
     <div class="gamepage-cover">
       <!-- src is going to be replacement for cover image -->
-      <img class="img-responsive cover_big" alt="" src="<%=api.get_cover_link(params[:cover],"cover_big")%>" style="height: 328px, max-width: 100%;">
+      <% if cover != nil %>
+      <img class="img-responsive cover_big" alt="" src="<%=api.get_cover_link(cover,"cover_big")%>" style="height: 328px, max-width: 100%;">
+      <% else %>
+        <%= image_tag ("no_image_big.jpg")%>
+      <% end %>
       <br><br> <!-- line breaks -->
       <% if user_signed_in? %>
       <div class="btn btn-primary btn-block mar-lg-bottom" onclick=" relocate_new_vg()">Add to Collection</div>
@@ -173,12 +178,16 @@
              </p>
              <p>
              <span class="text-semibold">Platforms:</span>
+             <% if results[0]['platforms'] != nil %>
               <%=api.get_platform(results[0]['platforms'][0])%>
               <% if results[0]['platforms'][1] != nil %>
                   , <%=api.get_platform(results[0]['platforms'][1])%>
               <% end %>
               <% if results[0]['platforms'][2] != nil %>
                   , <%=api.get_platform(results[0]['platforms'][2])%>
+              <% end %>
+              <% else %>
+              N/A
               <% end %>
              </p>
              <div class="description">
