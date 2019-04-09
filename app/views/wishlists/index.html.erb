@@ -6,7 +6,7 @@
   <head>
     <!-- Credit work -->
     <meta charset="utf-8">
-    <title>Video Game Collection</title>
+    <title>Wishlists</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style>
@@ -85,9 +85,9 @@
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <th><div class="col">Name</div></th>
-                <th><div class="col">Item Type</div></th>
-                <th><div class="col">Notes</div></th>
+                <th><%= sortable "name", "Name" %></th>
+                <th><%= sortable "item_type", "Item Type"  %></th>
+                <th><%= sortable "other", "Notes"  %></th>
                 <th></th>
                 <th></th>
                 <th></th>

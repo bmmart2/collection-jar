@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :videogames, dependent: :destroy
   has_many :vinyls, dependent: :destroy
   has_many :cards, dependent: :destroy
-  has_many :wishlist, dependent: :destroy
+  has_many :wishlists, dependent: :destroy
   validates :fname, :lname, :presence => true
 
 end

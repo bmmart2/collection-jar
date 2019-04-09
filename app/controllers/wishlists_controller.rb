@@ -1,10 +1,15 @@
 class WishlistsController < ApplicationController
   before_action :set_wishlist, only: [:show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction
   # GET /wishlists
   # GET /wishlists.json
   def index
-    @wishlists = Wishlist.all
+    if user_signed_in?
+      #Loads default sort case instead of .all
+      @wishlists = current_user.wishlists.order(sort_column + " " + sort_direction)
+    else
+        redirect_to :root
+    end
   end
 
   # GET /wishlists/1
@@ -14,7 +19,7 @@ class WishlistsController < ApplicationController
 
   # GET /wishlists/new
   def new
-    @wishlist = Wishlist.new
+    @wishlist = current_user.wishlists.new
   end
 
   # GET /wishlists/1/edit
@@ -24,7 +29,7 @@ class WishlistsController < ApplicationController
   # POST /wishlists
   # POST /wishlists.json
   def create
-    @wishlist = Wishlist.new(wishlist_params)
+    @wishlist = current_user.wishlists.create(wishlist_params)
 
     respond_to do |format|
       if @wishlist.save
@@ -70,5 +75,20 @@ class WishlistsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def wishlist_params
       params.require(:wishlist).permit(:name, :item_type, :other)
+    end
+
+    #Spooky internet, only sort by specific columns
+    def sortable_columns
+        ["name", "item_type", "other"]
+    end
+
+    #Default sort and specified column check
+    def sort_column
+      sortable_columns.include?(params[:column]) ? params[:column] : "name"
+    end
+
+    #Default sort and specified direction check
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
 end
