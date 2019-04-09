@@ -10,37 +10,21 @@
     <%= image_tag ("videogame.png"), :size=> "120x140"%>
     <p>
       <strong>Title:</strong>
-      <%= @videogame.title %>
-    </p>
-
-    <p>
-      <strong>Publisher:</strong>
-      <%= @videogame.publisher %>
-    </p>
-
-    <p>
-      <strong>Genre:</strong>
-      <%= @videogame.genre %>
-    </p>
-
-    <p>
-      <strong>Platform:</strong>
-      <%= @videogame.platform %>
+      <%= @movie.title %>
     </p>
 
     <p>
       <strong>Year:</strong>
-      <%= @videogame.year %>
+      <%= @movie.year %>
     </p>
 
     <p>
-      <strong>Condition:</strong>
-      <%= @videogame.condition %>
+      <strong>Genre:</strong>
+      <%= @movie.genre %>
     </p>
 
-
-    <%= link_to 'Edit', edit_videogame_path(@videogame), data: { confirm: 'Are you sure that you want to change this entry?' } %> |
-    <%= link_to 'Back', videogames_path %>
+    <%= link_to 'Edit', edit_movie_path(@movie), data: { confirm: 'Are you sure that you want to change this entry?' }  %> |
+    <%= link_to 'Back', movies_path %>
   </div>
 </body>
 </html>

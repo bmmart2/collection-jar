@@ -15,7 +15,7 @@
       </div>
 
       <!-- Search bar -->
-      <form class="form-inline my-2 my-lg-0" id="newsearch" method="get" action="http://localhost:3000/pages/search">
+      <form class="form-inline my-2 my-lg-0" id="newsearch" method="get" action="/pages/search">
         <input class="form-control mr-sm-2" name='q' type="search" placeholder="Search Video Games, Movies, and more..." aria-label="Search" id="textinput">
         <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
       </form>
@@ -84,13 +84,16 @@
             </div>
           </div>
           <br>
-          <p class="mar-md-bottom text-muted">Top results found for "<%= params[:q].to_s %>"</p>
+          <% api = VideoGameApi.new(api) %>
+          <% results = api.search_by_title(params[:q]) %>
+          <% if results == nil %>
+            No Matching Video Games Results found!
+          <% else %>
+          <p class="mar-md-bottom text-muted">Top Video Game Results found for "<%= params[:q].to_s %>"</p>
           <div class="block" data-sort="0" id="search-results">
             <!-- start of the render for games -->
-        <% api = VideoGameApi.new(api) %>
-        <% results = api.search_by_title(params[:q]) %>
         <% (0..3).each do |i| %>
-                <% if results[i]['id'] != nil
+                <% if results[i] != nil
                     date = api.find_release_date(results[i]['id'])
                     cover = api.get_cover_id(results[i]['cover']) %>
                 <% end %>
@@ -98,8 +101,12 @@
                 <div class="game-result" title="<%=results[i]['name']%>" data-original-title="hover over for title">
                 <div class="media overflow relative">
                   <div class="media-left">
-                    <a href="/games/<insert url>">
-                      <img src=<%= api.get_cover_link(cover, "thumb") %> alt="<name for cover>"> <!-- Placeholder for now -->
+                    <a href="/pages/game_info?id=<%=results[i]['id']%>&date=<%=date%>&cover=<%=cover%>">
+                      <% if cover != nil %>
+                        <img src=<%= api.get_cover_link(cover, "720p") %> height="200" width="150" > <!-- Placeholder for now -->
+                      <% else %>
+                        <%= image_tag ("no_image.jpg"), :size=> "150x200"%>
+                      <% end %>
                     </a>
                   </div>
                   <div class="media-body">
@@ -116,6 +123,54 @@
                 </div>
             <% end %>
             <% end %>
+            <% end %>
+
+            <!-- initialize movie api -->
+            <% movieApi = MovieApi.new(movieApi) %>
+            <% results = movieApi.search_by_title(params[:q]) %>
+            <% if results == nil %>
+              No Matching Movie Results found!
+            <% else %>
+            <p class="mar-md-bottom text-muted">Top Movie Results found for "<%= params[:q].to_s %>"</p>
+            <div class="block" data-sort="0" id="search-results">
+            <!-- start of the render for movies -->
+            <% (0..3).each do |i| %>
+              <% if results[i] != nil
+                date = movieApi.get_year(results[i]['Title'])
+                title = movieApi.get_title(results[i]['Title'])
+                id = movieApi.get_id(results[i]['Title'])
+                cover = movieApi.get_poster_link(results[i]['Title'])
+                type = movieApi.get_type(results[i]['Title'])
+                %>
+              <% end %>
+            <% if (results[i] != nil) && (type == "movie") %>
+          <div class="game-result" title="<%=title%>" data-original-title="hover over for title">
+            <div class="media overflow relative">
+              <div class="media-left">
+                <a href="/pages/movie_info?id=<%=results[i]['Title']%>&date=<%=date%>&cover=<%=cover%>">
+                  <% if cover != "N/A" %>
+                    <img src=<%=cover%> height="200" width="150">
+                  <% else %>
+                    <%= image_tag ("no_image.jpg"), :size=> "150x200"%>
+                  <% end %>
+                <a>
+              </div>
+              <div class="media-body">
+                <h4 class="media-heading">
+                  <a href="/pages/movie_info?id=<%=results[i]['Title']%>&date=<%=date%>&cover=<%=cover%>">
+                    <span><%=title%></span>
+                  </a>
+                  <small class="game-shortdate text-muted">(<span><%=date%></span>)
+                 </small>
+                </h4>
+              </div>
+            </div>
+            <br> <!-- line break between each entry -->
+            </div>
+            <% else %>
+            <% end %> <!-- end of if -->
+            <% end %> <!-- end of 3 entry loop -->
+            <% end %> <!-- end of checking if any matches
             </div>
           </div>
         </div>

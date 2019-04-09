@@ -4,7 +4,7 @@
   <head>
     <!-- Credit work -->
     <meta charset="utf-8">
-    <title>Video Game Collection</title>
+    <title>Movie Collection</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <style>
@@ -58,7 +58,7 @@
       <a class="navbar-brand" href="/">
         <%= image_tag ("videogame.png"), :size=> "55x65"%>
       </a>
-      <a class="navbar-brand" href="/">Video Games</a>
+      <a class="navbar-brand" href="/">Movies</a>
 
       <!-- Spacing -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -80,51 +80,32 @@
       </nav>
       <section class="jumbotron">
         <div class="container">
-          <p id='filter'>Filter your collection by title, publisher, genre, platform, year, or condition </p>
+          <p id='filter'>Filter your collection by title, content, ...</p>
           <center><input class="form-control" id="myInput" type="text" placeholder="Search..."></center><br>
           <table class="table table-bordered table-striped">
             <thead>
               <tr>
-                <!––Sorts via controller helper method ––>
-                <th><%= sortable "title", "Title" %></th>
-                <th><%= sortable "publisher", "Publisher"  %></th>
-                <th><%= sortable "genre", "Genre"  %></th>
-                <th><%= sortable "platform", "Platform"  %></th>
+                <th><%= sortable "title", "Title"  %></th>
                 <th><%= sortable "year", "Year"  %></th>
-                <th><%= sortable "condition", "Condition"  %></th>
+                <th><%= sortable "genre", "Genre"  %></th>
                 <th></th>
                 <th></th>
                 <th></th>
               </tr>
             </thead>
             <tbody id="myTable">
-              <% @videogames.each do |videogame| %>
+              <% @movies.each do |movie| %>
               <tr>
-                <td><div class="col"><%= videogame.title %></div></td>
-                <td><div class="col"><%= videogame.publisher %></div></td>
-                <td><div class="col"><%= videogame.genre %></div></td>
-                <td><div class="col"><%= videogame.platform %></div></td>
-                <td><div class="col"><%= videogame.year %></div></td>
-                <td><div class="col"><%= videogame.condition %></div></td>
-                <td><div class="col"><a class="btn btn-collection btn-sm"<%= link_to 'Show', videogame %></a></div></td>
-                <td><div class="col"><a class="btn btn-edit btn-sm"<%= link_to 'Edit', edit_videogame_path(videogame) %></a></div></td>
-                <td><div class="col"><a class="btn btn-danger btn-sm"<%= link_to 'Delete', videogame, method: :delete, data: { confirm: 'Are you sure that you want to delete this entry?' } %></a></div></td>
+                <td><div class="col"><%= movie.title %></div></td>
+                <td><div class="col"><%= movie.year %></div></td>
+                <td><div class="col"><%= movie.genre %></div></td>
+                <td><div class="col"><a class="btn btn-collection btn-sm"<%= link_to 'Show', movie %></a></div></td>
+                <td><div class="col"><a class="btn btn-edit btn-sm"<%= link_to 'Edit', edit_movie_path(movie) %></a></div></td>
+                <td><div class="col"><a class="btn btn-danger btn-sm"<%= link_to 'Delete', movie, method: :delete, data: { confirm: 'Are you sure that you want to delete this entry?' } %></a></div></td>
               </tr>
               <% end %>
             </tbody>
           </table>
-        </div>
-        <div class= "container container--xs text-center">
-          <p id='filter'>Upload your CSV file with your video game collection</p>
-          <%= form_tag import_videogames_path, multipart: true do %>
-            <!--original:<%= file_field_tag :file%>-->
-            <input type="file" name="file" id="file">
-            <%= submit_tag "Upload Video Games", class:"btn btn-collection"%>
-          <% end %>
-          <br>
-          <div class= "container container--xs">
-            <a class="btn btn-primary my-2"<%= link_to 'Create New Video Game', new_videogame_path %></a>
-          </div>
         </div>
       </section>
       <!-- Script for filtering -->
@@ -140,5 +121,8 @@
       </script>
     </body>
     <footer class="text-center">
+      <div class= "container container--xs">
+        <a class="btn btn-primary my-2"<%= link_to 'Create New Movie', new_movie_path %></a>
+      </div>
     </footer>
   </html>

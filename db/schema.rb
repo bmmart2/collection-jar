@@ -28,6 +28,17 @@ ActiveRecord::Schema.define(version: 2019_04_09_005140) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "movies", force: :cascade do |t|
+  t.string "title"
+  t.string "year"
+  t.string "genre"
+  t.datetime "created_at", null: false
+  t.datetime "updated_at", null: false
+  t.integer "user_id"
+  t.index ["user_id"], name: "index_movies_on_user_id"
+  t.index [nil], name: "index_movies_on_user"
+end
+
   create_table "uploads", force: :cascade do |t|
     t.string "title"
     t.string "publisher"
@@ -64,12 +75,11 @@ ActiveRecord::Schema.define(version: 2019_04_09_005140) do
     t.integer "condition"
     t.string "platform"
     t.string "year"
-    t.string "upc"
+    t.string "genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_videogames_on_user_id"
-    t.index [nil], name: "index_videogames_on_user"
   end
 
   create_table "vinyls", force: :cascade do |t|
