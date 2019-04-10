@@ -68,6 +68,11 @@ class MoviesController < ApplicationController
     end
   end
 
+  def import
+    @movie = current_user.movies.import(params[:file])
+    redirect_to movies_path, notice: "Uploads Added Successfully"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movie

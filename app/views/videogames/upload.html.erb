@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Credit work -->
+    <meta charset="utf-8">
+    <title>Upload</title>
+    <style>
+      .container {
+        margin-top: 100px;
+      }
+      .input-group {
+        margin-top: 50px;
+      }
+      .jumbotron-heading {
+        padding-right: 50px;
+      }
+      .text-center {
+        margin-top: 30px;
+      }
+      .logo {
+        padding-right: 50px;
+      }
+      .wall {
+        background-color: white;
+      }
+      .jumbotron {
+        background-color:
+      }
+      .float-left {
+        margin-top: 130px;
+        padding-left: 10px;
+      }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </head>
+  <body class="wall">
+    <div class="container">
+        <div class="col-sm-13">
+          <main role="main">
+            <center class="logo"><%= image_tag ("upload.png"), :size=> "200x130"%></center>
+            <section class="jumbotron text-center">
+                <h1 class="jumbotron-heading">Upload CSV for Video Game</h1>
+                <br>
+                <%= form_tag import_videogames_path, multipart: true do %>
+                  <!--original:<%= file_field_tag :file%>-->
+                  <input type="file" name="file" id="file">
+                  <%= submit_tag "Upload Video Games", class:"btn btn-collection"%>
+                <% end %>
+            </section>
+          </main>
+        </div>
+       </div>
+    </div>
+  </body>
+  <p class="float-left">
+    <%= link_to 'Back', videogames_path %>
+  </p>
+</html>
