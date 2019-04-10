@@ -56,7 +56,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="/">
-        <%= image_tag ("tape.jpg"), :size=> "55x35"%>
+        <%= image_tag ("tape.jpg"), :size=> "55x65", :style =>'padding-top:13px; padding-bottom:13px;'%>
       </a>
       <a class="navbar-brand" href="/">Movies</a>
 
@@ -67,11 +67,12 @@
       </div>
 
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item dropdown py-0 px-md-5">
+        <li class="nav-item dropdown py-20 px-md-5">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Hello, <%= current_user.fname %>!
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" <%= link_to('Wishlist', wishlists_path) %>
             <a class="dropdown-item" <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
             </div>
           </li>
