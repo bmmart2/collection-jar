@@ -80,7 +80,7 @@
       </nav>
       <section class="jumbotron">
         <div class="container">
-          <p id='filter'>Filter your collection by title, content, ...</p>
+          <p id='filter'>Filter your collection by title, year, genre</p>
           <center><input class="form-control" id="myInput" type="text" placeholder="Search..."></center><br>
           <table class="table table-bordered table-striped">
             <thead>
@@ -123,6 +123,7 @@
     <footer class="text-center">
       <div class= "container container--xs">
         <a class="btn btn-primary my-2"<%= link_to 'Create New Movie', new_movie_path %></a>
+        <a class="btn btn-collection my-2"<%= link_to 'Upload CSV for Movie', upload_movies_path %></a>
       </div>
     </footer>
   </html>
