@@ -67,6 +67,7 @@
             Hello, <%= current_user.fname %>!
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" <%= link_to('Wishlist', wishlists_path) %>
             <a class="dropdown-item" <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
             </div>
           </li>

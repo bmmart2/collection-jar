@@ -37,7 +37,8 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <% if user_signed_in? %>
-                  <a class="dropdown-item" <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+                  <a class="dropdown-item" <%= link_to('Wishlist', wishlists_path) %>
+                  <a class="dropdown-item" <%= link_to('Logout', destroy_user_session_path, method: :delete)%>
 
               <% else %>
                   <a class="dropdown-item" <%= link_to('Login', new_user_session_path)  %></a>
@@ -92,8 +93,8 @@
                 </svg>
                 <div class="container">
                   <div class="carousel-caption">
-                    <h1>Display</h1>
-                    <p>Do you want to showcase your items for sale or display? Users that list their items for display can be easily accessed by others through our search function. The item will display price values from Ebay/Amazon.</p>
+                    <h1>Import</h1>
+                    <p>Collection Jar also supports importing your collections from CSV files.</p>
                     <p><a class="btn btn-lg btn-collection" href="#" role="button">Learn more</a></p>
                   </div>
                 </div>
@@ -278,7 +279,7 @@
           <li><a class="text-muted" href="https://rubyonrails.org">Ruby on Rails</a></li>
           <li><a class="text-muted" href="https://getbootstrap.com/">Bootstrap</a></li>
           <li><a class="text-muted" href="https://www.imdb.com/">IMDb</a></li>
-          <li><a class="text-muted" href="#">Etc.</a></li>
+          <li><a class="text-muted" href="htps://www.igdb.com/">IGDB</a></li>
         </ul>
       </div>
       <div class="col-6 col-md">

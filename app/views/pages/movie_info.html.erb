@@ -36,6 +36,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <% if user_signed_in? %>
+                  <a class="dropdown-item" <%= link_to('Wishlist', wishlists_path) %>
                   <a class="dropdown-item" <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
 
               <% else %>
