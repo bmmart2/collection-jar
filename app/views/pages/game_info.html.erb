@@ -56,11 +56,6 @@
       display: block;
       width: 100%;
     }
-    .btn-primary {
-      color: #fff;
-      background-color: #2e51a2;
-      border-color: #2e51a2;
-    }
     .gamepage-cover {
     float: left;
     width: 264px;
@@ -102,7 +97,7 @@
       <% end %>
       <br><br> <!-- line breaks -->
       <% if user_signed_in? %>
-      <div class="btn btn-primary btn-block mar-lg-bottom" onclick=" relocate_new_vg()">Add to Collection</div>
+      <div class="btn btn-collection btn-block mar-lg-bottom" onclick=" relocate_new_vg()">Add to Collection</div>
       <script>
             function relocate_new_vg()
             {

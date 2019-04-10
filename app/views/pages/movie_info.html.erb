@@ -96,6 +96,7 @@
   <% imdb = api.get_imdb(title) %>
   <% actors = api.get_actors(title) %>
   <% writers = api.get_writers(title) %>
+  <% rated = api.get_rated(title) %>
 
   <div class="container">
     <div class="gamepage-cover">
@@ -156,9 +157,21 @@
        <div class="gamepage-summary">
          <div class="gamepage-title-container" style="height:333.8px;">
            <div class="gamepage-title-wrapper"><br>
-             <h1 class="banner-title"><%=title%></h1>
+             <h1 class="banner-title"><%=title%>
+             <% if rated == "PG-13" %>
+               <%= image_tag ("PG-13.svg"), :size=> "60x60"%>
+             <% elsif rated == "PG" %>
+               <%= image_tag ("PG.svg"), :size=> "35x35"%>
+             <% elsif rated == "R" %>
+               <%= image_tag ("R.svg"), :size=> "28x28"%>
+             <% elsif rated == "NC-17" %>
+               <%= image_tag ("NC-17.svg"), :size=> "55x55"%>
+             <% else %>
+               <%= image_tag ("NotRated.svg"), :size=> "65x65"%>
+             <% end %>
+             </h1>
              <h2 class="banner-subheading"><small><%=date%><small></h2>
-             <h3 class="banner-subsubheading"><i><small><%=director%></small></i></h3>
+             <h3 class="banner-subsubheading"><i><small>Director: <%=director%></small></i></h3>
            </div>
            <h3>About<h3>
            <div class="about-section">

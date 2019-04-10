@@ -37,12 +37,6 @@ class MovieApi
     parsed_response["Title"]
   end
 
-  def get_id(title)
-    response = MovieApi.get("/?apikey=2efeb882&t=#{title}").to_s
-    parsed_response = JSON.parse(response)
-    parsed_response["imdbID"]
-  end
-
   def get_year(title)
     response = MovieApi.get("/?apikey=2efeb882&t=#{title}").to_s
     parsed_response = JSON.parse(response)
@@ -101,6 +95,12 @@ class MovieApi
     response = MovieApi.get("/?apikey=2efeb882&t=#{title}").to_s
     parsed_response = JSON.parse(response)
     parsed_response["Writer"]
+  end
+
+  def get_rated(title)
+    response = MovieApi.get("/?apikey=2efeb882&t=#{title}").to_s
+    parsed_response = JSON.parse(response)
+    parsed_response["Rated"]
   end
 
 end

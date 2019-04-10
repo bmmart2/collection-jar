@@ -1,13 +1,26 @@
 Rails.application.routes.draw do
-  resources :movies
+  resources :movies do
+    collection { post :import }
+    collection do
+      get 'upload'
+    end
+  end
   resources :wishlists
   resources :cards
-  resources :vinyls
+  resources :vinyls do
+    collection { post :import }
+    collection do
+      get 'upload'
+    end
+  end
   resources :uploads do
     collection { post :import }
   end
   resources :videogames do
     collection { post :import }
+    collection do
+      get 'upload'
+    end
   end
   get 'pages/upload'
   get 'pages/terms'

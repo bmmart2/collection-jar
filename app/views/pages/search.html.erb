@@ -3,7 +3,7 @@
 <!-- Header -->
   <head>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/pages/index">
+    <a name="top" class="navbar-brand" href="/pages/index">
       <%= image_tag ("logo.png"), :size=> "55x65"%>
     </a>
     <a class="navbar-brand" href="/pages/index">Collection Jar</a>
@@ -86,13 +86,14 @@
           <br>
           <% api = VideoGameApi.new(api) %>
           <% results = api.search_by_title(params[:q]) %>
-          <% if results == nil %>
-            No Matching Video Games Results found!
-          <% else %>
-          <p class="mar-md-bottom text-muted">Top Video Game Results found for "<%= params[:q].to_s %>"</p>
+          <p class="mar-md-bottom"><strong>Top Video Game Results found for "<%= params[:q].to_s %>"</strong></p>
           <div class="block" data-sort="0" id="search-results">
+            <% if results[0] == nil %>
+            <i>No Matching Video Games Results found!</i>
+            <br><br><br>
+            <% else %>
             <!-- start of the render for games -->
-        <% (0..3).each do |i| %>
+        <% (0..1).each do |i| %>
                 <% if results[i] != nil
                     date = api.find_release_date(results[i]['id'])
                     cover = api.get_cover_id(results[i]['cover']) %>
@@ -103,7 +104,7 @@
                   <div class="media-left">
                     <a href="/pages/game_info?id=<%=results[i]['id']%>&date=<%=date%>&cover=<%=cover%>">
                       <% if cover != nil %>
-                        <img src=<%= api.get_cover_link(cover, "720p") %> height="200" width="150" > <!-- Placeholder for now -->
+                        <img src=<%= api.get_cover_link(cover, "720p") %> width="150" > <!-- Placeholder for now -->
                       <% else %>
                         <%= image_tag ("no_image.jpg"), :size=> "150x200"%>
                       <% end %>
@@ -125,31 +126,31 @@
             <% end %>
             <% end %>
 
+            <br>
             <!-- initialize movie api -->
             <% movieApi = MovieApi.new(movieApi) %>
-            <% results = movieApi.search_by_title(params[:q]) %>
-            <% if results == nil %>
-              No Matching Movie Results found!
-            <% else %>
-            <p class="mar-md-bottom text-muted">Top Movie Results found for "<%= params[:q].to_s %>"</p>
+            <% results2 = movieApi.search_by_title(params[:q]) %>
+            <p class="mar-md-bottom"><strong>Top Movie Results found for "<%= params[:q].to_s %>"</strong></p>
             <div class="block" data-sort="0" id="search-results">
+              <% if (results2 == nil) %>
+                <i>No Matching Movie Results found!</i>
+              <% else %>
             <!-- start of the render for movies -->
-            <% (0..3).each do |i| %>
-              <% if results[i] != nil
-                date = movieApi.get_year(results[i]['Title'])
-                title = movieApi.get_title(results[i]['Title'])
-                id = movieApi.get_id(results[i]['Title'])
-                cover = movieApi.get_poster_link(results[i]['Title'])
-                type = movieApi.get_type(results[i]['Title'])
+            <% (0..5).each do |i| %>
+              <% if results2[i] != nil
+                date2 = movieApi.get_year(results2[i]['Title'])
+                title2 = movieApi.get_title(results2[i]['Title'])
+                cover2 = movieApi.get_poster_link(results2[i]['Title'])
+                type = movieApi.get_type(results2[i]['Title'])
                 %>
               <% end %>
-            <% if (results[i] != nil) && (type == "movie") %>
-          <div class="game-result" title="<%=title%>" data-original-title="hover over for title">
+            <% if (results2[i] != nil) && (type == "movie") %>
+          <div class="game-result" title="<%=title2%>" data-original-title="hover over for title">
             <div class="media overflow relative">
               <div class="media-left">
-                <a href="/pages/movie_info?id=<%=results[i]['Title']%>&date=<%=date%>&cover=<%=cover%>">
-                  <% if cover != "N/A" %>
-                    <img src=<%=cover%> height="200" width="150">
+                <a href="/pages/movie_info?id=<%=results2[i]['Title']%>&date=<%=date2%>&cover=<%=cover2%>">
+                  <% if cover2 != "N/A" %>
+                    <img src=<%=cover2%> height="200" width="150">
                   <% else %>
                     <%= image_tag ("no_image.jpg"), :size=> "150x200"%>
                   <% end %>
@@ -157,17 +158,16 @@
               </div>
               <div class="media-body">
                 <h4 class="media-heading">
-                  <a href="/pages/movie_info?id=<%=results[i]['Title']%>&date=<%=date%>&cover=<%=cover%>">
-                    <span><%=title%></span>
+                  <a href="/pages/movie_info?id=<%=results2[i]['Title']%>&date=<%=date2%>&cover=<%=cover2%>">
+                    <span><%=title2%></span>
                   </a>
-                  <small class="game-shortdate text-muted">(<span><%=date%></span>)
+                  <small class="game-shortdate text-muted">(<span><%=date2%></span>)
                  </small>
                 </h4>
               </div>
             </div>
             <br> <!-- line break between each entry -->
             </div>
-            <% else %>
             <% end %> <!-- end of if -->
             <% end %> <!-- end of 3 entry loop -->
             <% end %> <!-- end of checking if any matches
@@ -184,7 +184,7 @@
       </div>
     </div>
     <p class="float-left">
-      <a href="#">Back to top</a>
+      <a href="#top">Back to top</a>
     </p>
   </footer>
 </html>
