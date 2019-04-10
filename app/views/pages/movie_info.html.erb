@@ -29,6 +29,7 @@
           <li class="nav-item dropdown py-0 px-md-5">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <% if user_signed_in? %>
+              <%= image_tag ("user.png"), :size=> "20x20"%>
                     Hello, <%= current_user.fname %>!
               <% else %>
                     Hello, User!
@@ -56,11 +57,6 @@
     .btn-block {
       display: block;
       width: 100%;
-    }
-    .btn-primary {
-      color: #fff;
-      background-color: #2e51a2;
-      border-color: #2e51a2;
     }
     .gamepage-cover {
     float: left;
@@ -107,9 +103,8 @@
       <% else %>
         <%= image_tag ("no_image_big.jpg")%>
       <% end %>
-      <br><br> <!-- line breaks -->
       <% if user_signed_in? %>
-      <div class="btn btn-primary btn-block mar-lg-bottom" onclick=" relocate_new_movies()">Add to Collection</div>
+      <div class="btn btn-collection btn-block mar-lg-bottom" onclick=" relocate_new_movies()">Add to Collection</div>
       <script>
             function relocate_new_movies()
             {
@@ -124,6 +119,13 @@
                  location.href = "/wishlists/new?title=<%=title%>&type=Movie%20";
             }
       </script>
+      <div class="btn btn-primary btn-block mar-lg-bottom mt-1" onclick=" relocate_ebay()">Find on Ebay</div>
+      <script>
+            function relocate_ebay()
+            {
+                 location.href = "https://www.ebay.com/sch/i.html?_nkw=<%=title%>";
+            }
+      </script>
       <% else %>
       <div class="btn btn-primary btn-block mar-lg-bottom" onclick=" relocate()">Sign up to Add Collection</div>
       <script>
@@ -133,10 +135,11 @@
             }
       </script>
       <% end %>
+      <br>
       <div class="gamepage-gauge">
         <svg class="gauge filter-good " viewBox="0 0 110 110" width="136px" height="136px" style="width:136px;text-align:center;">
           <circle cx="55" cy="55" r="55" fill="#FFFFFF"></circle>
-          <path stroke-linecap="round" stroke-width="6" stroke="#F3F3F3" fill="none" stroke-dasharray="251.2, 251.2" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
+          <path stroke-linecap="round" stroke-width="6" stroke="#2e51a2" fill="none" stroke-dasharray="251.2, 251.2" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
           <path class="gauge-progress" stroke-linecap="round" stroke-width="6" fill="none" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" style="stroke-dasharray: 190.912, 251.2; transition: stroke-dasharray 3s ease 0s;"></path>
           <text x="55" y="50" text-anchor="middle" dy="7" fill="#2e51a2" font-size="30">
             <%=metascore%>
@@ -145,7 +148,7 @@
         </svg>
         <svg class="gauge filter-good gauge-twin" viewBox="0 0 110 110" width="105px" height="105px" style="width:105px;text-align:center;">
           <circle cx="55" cy="55" r="55" fill="#FFFFFF"></circle>
-          <path stroke-linecap="round" stroke-width="7" stroke="#F3F3F3" fill="none" stroke-dasharray="251.2, 251.2" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
+          <path stroke-linecap="round" stroke-width="7" stroke="#2e51a2" fill="none" stroke-dasharray="251.2, 251.2" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
           <path class="gauge-progress" stroke-linecap="round" stroke-width="7" fill="none" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" style="stroke-dasharray: 192.651, 251.2; transition: stroke-dasharray 3s ease 0s;"></path>
           <text x="55" y="50" text-anchor="middle" dy="7" fill="#2e51a2" font-size="30">
             <%=imdb%>

@@ -27,6 +27,14 @@ class VideoGameApi
         return response.parsed_response
     end
 
+    def find_popular_games()
+      body = "fields name,popularity,cover; sort popularity desc;"
+      response = VideoGameApi.get("/games",
+          :headers => self.headers,
+          :body => body)
+      return response.parsed_response;
+    end
+
     def get_by_id(id)
         body = "fields *;
             where id =" + id.to_s + ";

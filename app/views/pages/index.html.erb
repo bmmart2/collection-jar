@@ -30,6 +30,7 @@
           <li class="nav-item dropdown py-0 px-md-5">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <% if user_signed_in? %>
+              <%= image_tag ("user.png"), :size=> "20x20"%>
                     Hello, <%= current_user.fname %>!
               <% else %>
                     Hello, User!
@@ -77,37 +78,37 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <svg class="bd-placeholder-img" width="100%" height="255" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
-                  <rect width="100%" height="100%" fill="#343a40"/>
+                  <rect width="100%" height="100%" fill="#2e51a2"/>
                 </svg>
                 <div class="container">
                   <div class="carousel-caption text-left">
                     <h1>Start Collecting</h1>
                     <p>Choose from one of the following options below and start your collection, if you want to create a custom collection other than our preset options click on <strong>Create Custom</strong>.</p>
-                    <p><a class="btn btn-lg btn-collection" href="#" role="button">Create Custom</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Create Custom</a></p>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
                 <svg class="bd-placeholder-img" width="100%" height="255" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
-                  <rect width="100%" height="100%" fill="#343a40"/>
+                  <rect width="100%" height="100%" fill="#2e51a2"/>
                 </svg>
                 <div class="container">
                   <div class="carousel-caption">
                     <h1>Import</h1>
                     <p>Collection Jar also supports importing your collections from CSV files.</p>
-                    <p><a class="btn btn-lg btn-collection" href="#" role="button">Learn more</a></p>
+                    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
                   </div>
                 </div>
               </div>
               <div class="carousel-item">
                 <svg class="bd-placeholder-img" width="100%" height="255" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img">
-                  <rect width="100%" height="100%" fill="#343a40"/>
+                  <rect width="100%" height="100%" fill="#2e51a2"/>
                 </svg>
                 <div class="container">
                   <div class="carousel-caption">
                     <h1>Wishlist</h1>
                     <p>Keep track of all your favorite items yet to be collected!</p>
-                    <p><a class="btn btn-lg btn-collection" href='/wishlists' role="button">Get Started</a></p>
+                    <p><a class="btn btn-lg btn-primary" href='/wishlists' role="button">Get Started</a></p>
                   </div>
                 </div>
               </div>
@@ -136,9 +137,7 @@
           </section>
         </main>
       </div>
-     </div>
      <% end %>
-     <!-- text box end -->
      <% if user_signed_in? %>
      <!-- collection options for logged in users -->
      <div class="row">

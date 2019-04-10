@@ -29,6 +29,7 @@
           <li class="nav-item dropdown py-0 px-md-5">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <% if user_signed_in? %>
+              <%= image_tag ("user.png"), :size=> "20x20"%>
                     Hello, <%= current_user.fname %>!
               <% else %>
                     Hello, User!
@@ -96,7 +97,6 @@
       <% else %>
         <%= image_tag ("no_image_big.jpg")%>
       <% end %>
-      <br><br> <!-- line breaks -->
       <% if user_signed_in? %>
       <div class="btn btn-collection btn-block mar-lg-bottom" onclick=" relocate_new_vg()">Add to Collection</div>
       <script>
@@ -113,6 +113,13 @@
                  location.href = "/wishlists/new?title=<%=results[0]['name']%>&type=Video%20Game";
             }
       </script>
+      <div class="btn btn-primary btn-block mar-lg-bottom mt-1" onclick=" relocate_ebay()">Find on Ebay</div>
+      <script>
+            function relocate_ebay()
+            {
+                 location.href = "https://www.ebay.com/sch/i.html?_nkw=<%=results[0]['name']%>";
+            }
+      </script>
       <% else %>
       <div class="btn btn-primary btn-block mar-lg-bottom" onclick=" relocate()">Sign up to Add Collection</div>
       <script>
@@ -122,10 +129,11 @@
             }
       </script>
       <% end %>
+      <br>
       <div class="gamepage-gauge">
         <svg class="gauge filter-good " viewBox="0 0 110 110" width="136px" height="136px" style="width:136px;text-align:center;">
           <circle cx="55" cy="55" r="55" fill="#FFFFFF"></circle>
-          <path stroke-linecap="round" stroke-width="6" stroke="#F3F3F3" fill="none" stroke-dasharray="251.2, 251.2" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
+          <path stroke-linecap="round" stroke-width="6" stroke="#2e51a2" fill="none" stroke-dasharray="251.2, 251.2" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
           <path class="gauge-progress" stroke-linecap="round" stroke-width="6" fill="none" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" style="stroke-dasharray: 190.912, 251.2; transition: stroke-dasharray 3s ease 0s;"></path>
           <text x="55" y="50" text-anchor="middle" dy="7" fill="#2e51a2" font-size="30">
              <% if results[0]['aggregated_rating'] != nil %>
@@ -138,7 +146,7 @@
         </svg>
         <svg class="gauge filter-good gauge-twin" viewBox="0 0 110 110" width="105px" height="105px" style="width:105px;text-align:center;">
           <circle cx="55" cy="55" r="55" fill="#FFFFFF"></circle>
-          <path stroke-linecap="round" stroke-width="7" stroke="#F3F3F3" fill="none" stroke-dasharray="251.2, 251.2" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
+          <path stroke-linecap="round" stroke-width="7" stroke="#2e51a2" fill="none" stroke-dasharray="251.2, 251.2" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80"></path>
           <path class="gauge-progress" stroke-linecap="round" stroke-width="7" fill="none" d="M55 15 a 40 40 0 0 1 0 80 a 40 40 0 0 1 0 -80" style="stroke-dasharray: 192.651, 251.2; transition: stroke-dasharray 3s ease 0s;"></path>
           <text x="55" y="50" text-anchor="middle" dy="7" fill="#2e51a2" font-size="30">
             <% if results[0]['aggregated_rating_count'] != nil %>
@@ -190,7 +198,30 @@
                <%=results[0]['summary']%>
              </div>
              <br>
-           </div>
+           </div><br><br><br><br><br><br><br>
+           <p class="mar-md-bottom"><strong>Popular Video Games Currently</strong></p>
+              <div class="row mb-2">
+                <% api2 = VideoGameApi.new(api2) %>
+                <% results3 = api2.find_popular_games() %>
+                <% (0..5).each do |i| %>
+                 <% if results3[i] != nil
+                     date = api2.find_release_date(results3[i]['id'])
+                     cover = api2.get_cover_id(results3[i]['cover']) %>
+                 <% end %>
+                <% if results3[i] != nil %>
+                 <div class="col-md-2">
+                   <div>
+                     <a href="/pages/game_info?id=<%=results3[i]['id']%>&date=<%=date%>&cover=<%=cover%>">
+                     <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/150x200?theme=thumb"
+                     alt="Thumbnail [150x200]" style="width: 150px; height: 200px;"
+                     src="<%= api2.get_cover_link(cover, "720p") %>"
+                     data-holder-rendered="true">
+                     </a>
+                   </div>
+                 </div>
+                 <% end %>
+                 <% end %>
+               </div>
          </div>
        </div>
    </body>
