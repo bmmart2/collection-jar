@@ -79,7 +79,7 @@
             <br><br><br>
             <% else %>
             <!-- start of the render for games -->
-        <% (0..5).each do |i| %>
+        <% (0..3).each do |i| %>
                 <% if results[i] != nil
                     date = api.find_release_date(results[i]['id'])
                     cover = api.get_cover_id(results[i]['cover']) %>
@@ -123,7 +123,7 @@
                 <i>No Matching Movie Results found!</i>
               <% else %>
             <!-- start of the render for movies -->
-            <% (0..5).each do |i| %>
+            <% (0..3).each do |i| %>
               <% if results2[i] != nil
                 date2 = movieApi.get_year(results2[i]['Title'])
                 title2 = movieApi.get_title(results2[i]['Title'])
