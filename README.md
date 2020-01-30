@@ -13,7 +13,7 @@ Features include:
 Collection Jar was developed at LSU as part of the CSC 3380 Design Class.
   
 ![Search function](https://bmmart2.com/owncloud/index.php/s/u71whUO8s40fqmR/download)
-![Search result](https://bmmart2.com/owncloud/index.php/s/YMj9Pqj0nG7NhhV)
+![Search result](https://bmmart2.com/owncloud/index.php/s/YMj9Pqj0nG7NhhV/download)
 ![Collection page](https://bmmart2.com/owncloud/index.php/s/dqM5armWK8TSGne/download)
 
 
