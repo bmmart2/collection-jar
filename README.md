@@ -2,7 +2,7 @@
 
   ![Home page](https://bmmart2.com/owncloud/index.php/s/xTCHQ9eOpjrLvDL/download)
 
-Collection Jar is a Ruby-on-Rails application designed to help collectors of all kinds catalogue and keep track of their personal collections in an efficient and enjoyable manner.
+Collection Jar is a Ruby-on-Rails/Bootstrap application designed to help collectors of all kinds catalogue and keep track of their personal collections in an efficient and enjoyable manner.
 
 Features include:
 
